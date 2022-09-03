@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/keep-in-touch/static/css/main.d2624381.css",
+    "main.js": "/keep-in-touch/static/js/main.29c5d2ae.js",
+    "static/media/user-ava.jpg": "/keep-in-touch/static/media/user-ava.f02c58cf25fd7f59ec2b.jpg",
+    "static/media/logo.png": "/keep-in-touch/static/media/logo.75682946699dd77119f6.png",
+    "index.html": "/keep-in-touch/index.html",
+    "main.d2624381.css.map": "/keep-in-touch/static/css/main.d2624381.css.map",
+    "main.29c5d2ae.js.map": "/keep-in-touch/static/js/main.29c5d2ae.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d2624381.css",
+    "static/js/main.29c5d2ae.js"
+  ]
+}
