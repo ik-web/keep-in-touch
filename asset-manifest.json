@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/keep-in-touch/static/css/main.1d69b177.css",
-    "main.js": "/keep-in-touch/static/js/main.bc5ef197.js",
+    "main.css": "/keep-in-touch/static/css/main.f784477d.css",
+    "main.js": "/keep-in-touch/static/js/main.85a8bf7a.js",
     "static/media/logo.png": "/keep-in-touch/static/media/logo.75682946699dd77119f6.png",
     "index.html": "/keep-in-touch/index.html",
-    "main.1d69b177.css.map": "/keep-in-touch/static/css/main.1d69b177.css.map",
-    "main.bc5ef197.js.map": "/keep-in-touch/static/js/main.bc5ef197.js.map"
+    "main.f784477d.css.map": "/keep-in-touch/static/css/main.f784477d.css.map",
+    "main.85a8bf7a.js.map": "/keep-in-touch/static/js/main.85a8bf7a.js.map"
   },
   "entrypoints": [
-    "static/css/main.1d69b177.css",
-    "static/js/main.bc5ef197.js"
+    "static/css/main.f784477d.css",
+    "static/js/main.85a8bf7a.js"
   ]
 }
