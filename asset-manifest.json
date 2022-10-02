@@ -1,14 +1,20 @@
 {
   "files": {
-    "main.css": "/keep-in-touch/static/css/main.b1f304e3.css",
-    "main.js": "/keep-in-touch/static/js/main.d15c3007.js",
+    "main.css": "/keep-in-touch/static/css/main.102a43a3.css",
+    "main.js": "/keep-in-touch/static/js/main.c8883112.js",
+    "static/media/settings.ico": "/keep-in-touch/static/media/settings.cd0456c4f938f70f948a.ico",
+    "static/media/news.ico": "/keep-in-touch/static/media/news.f5bdbf8ce74642ae2431.ico",
+    "static/media/profile.ico": "/keep-in-touch/static/media/profile.260815d242fba9cdd2b7.ico",
+    "static/media/messages.ico": "/keep-in-touch/static/media/messages.13af134c42e092be5c6b.ico",
+    "static/media/like.ico": "/keep-in-touch/static/media/like.0a3fcd46ec0ef2801fc6.ico",
     "static/media/logo.png": "/keep-in-touch/static/media/logo.0f91c10830df5a1845bd.png",
+    "static/media/music.png": "/keep-in-touch/static/media/music.5df7876b3e5863a598d6.png",
     "index.html": "/keep-in-touch/index.html",
-    "main.b1f304e3.css.map": "/keep-in-touch/static/css/main.b1f304e3.css.map",
-    "main.d15c3007.js.map": "/keep-in-touch/static/js/main.d15c3007.js.map"
+    "main.102a43a3.css.map": "/keep-in-touch/static/css/main.102a43a3.css.map",
+    "main.c8883112.js.map": "/keep-in-touch/static/js/main.c8883112.js.map"
   },
   "entrypoints": [
-    "static/css/main.b1f304e3.css",
-    "static/js/main.d15c3007.js"
+    "static/css/main.102a43a3.css",
+    "static/js/main.c8883112.js"
   ]
 }
