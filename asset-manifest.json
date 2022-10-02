@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/keep-in-touch/static/css/main.100b028a.css",
-    "main.js": "/keep-in-touch/static/js/main.39456242.js",
+    "main.css": "/keep-in-touch/static/css/main.192c009a.css",
+    "main.js": "/keep-in-touch/static/js/main.e5d2c6c0.js",
     "static/media/settings.ico": "/keep-in-touch/static/media/settings.cd0456c4f938f70f948a.ico",
     "static/media/news.ico": "/keep-in-touch/static/media/news.f5bdbf8ce74642ae2431.ico",
     "static/media/profile.ico": "/keep-in-touch/static/media/profile.260815d242fba9cdd2b7.ico",
@@ -10,11 +10,11 @@
     "static/media/logo.png": "/keep-in-touch/static/media/logo.0f91c10830df5a1845bd.png",
     "static/media/music.png": "/keep-in-touch/static/media/music.5df7876b3e5863a598d6.png",
     "index.html": "/keep-in-touch/index.html",
-    "main.100b028a.css.map": "/keep-in-touch/static/css/main.100b028a.css.map",
-    "main.39456242.js.map": "/keep-in-touch/static/js/main.39456242.js.map"
+    "main.192c009a.css.map": "/keep-in-touch/static/css/main.192c009a.css.map",
+    "main.e5d2c6c0.js.map": "/keep-in-touch/static/js/main.e5d2c6c0.js.map"
   },
   "entrypoints": [
-    "static/css/main.100b028a.css",
-    "static/js/main.39456242.js"
+    "static/css/main.192c009a.css",
+    "static/js/main.e5d2c6c0.js"
   ]
 }
