@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/keep-in-touch/static/css/main.f80d3acd.css",
-    "main.js": "/keep-in-touch/static/js/main.ca6b246f.js",
+    "main.css": "/keep-in-touch/static/css/main.2eb36353.css",
+    "main.js": "/keep-in-touch/static/js/main.bbdbfc55.js",
     "static/media/settings.ico": "/keep-in-touch/static/media/settings.cd0456c4f938f70f948a.ico",
     "static/media/news.ico": "/keep-in-touch/static/media/news.f5bdbf8ce74642ae2431.ico",
     "static/media/profile.ico": "/keep-in-touch/static/media/profile.260815d242fba9cdd2b7.ico",
@@ -10,11 +10,11 @@
     "static/media/logo.png": "/keep-in-touch/static/media/logo.0f91c10830df5a1845bd.png",
     "static/media/music.png": "/keep-in-touch/static/media/music.5df7876b3e5863a598d6.png",
     "index.html": "/keep-in-touch/index.html",
-    "main.f80d3acd.css.map": "/keep-in-touch/static/css/main.f80d3acd.css.map",
-    "main.ca6b246f.js.map": "/keep-in-touch/static/js/main.ca6b246f.js.map"
+    "main.2eb36353.css.map": "/keep-in-touch/static/css/main.2eb36353.css.map",
+    "main.bbdbfc55.js.map": "/keep-in-touch/static/js/main.bbdbfc55.js.map"
   },
   "entrypoints": [
-    "static/css/main.f80d3acd.css",
-    "static/js/main.ca6b246f.js"
+    "static/css/main.2eb36353.css",
+    "static/js/main.bbdbfc55.js"
   ]
 }
