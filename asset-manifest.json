@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/keep-in-touch/static/css/main.0eac0bf7.css",
+    "main.css": "/keep-in-touch/static/css/main.68bf3ba2.css",
     "main.js": "/keep-in-touch/static/js/main.8f3a853c.js",
     "static/media/network.ico": "/keep-in-touch/static/media/network.f5bdbf8ce74642ae2431.ico",
     "static/media/profile.ico": "/keep-in-touch/static/media/profile.260815d242fba9cdd2b7.ico",
@@ -10,11 +10,11 @@
     "static/media/music.png": "/keep-in-touch/static/media/music.5df7876b3e5863a598d6.png",
     "static/media/spinner.svg": "/keep-in-touch/static/media/spinner.d87c0449e04560951421deb00487527d.svg",
     "index.html": "/keep-in-touch/index.html",
-    "main.0eac0bf7.css.map": "/keep-in-touch/static/css/main.0eac0bf7.css.map",
+    "main.68bf3ba2.css.map": "/keep-in-touch/static/css/main.68bf3ba2.css.map",
     "main.8f3a853c.js.map": "/keep-in-touch/static/js/main.8f3a853c.js.map"
   },
   "entrypoints": [
-    "static/css/main.0eac0bf7.css",
+    "static/css/main.68bf3ba2.css",
     "static/js/main.8f3a853c.js"
   ]
 }
