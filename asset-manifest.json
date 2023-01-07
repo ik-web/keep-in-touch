@@ -1,21 +1,20 @@
 {
   "files": {
-    "main.css": "/keep-in-touch/static/css/main.e84d6ef1.css",
-    "main.js": "/keep-in-touch/static/js/main.8dc14f33.js",
+    "main.css": "/keep-in-touch/static/css/main.e8e0a35e.css",
+    "main.js": "/keep-in-touch/static/js/main.fd70462f.js",
+    "static/media/community.png": "/keep-in-touch/static/media/community.956937ffcbe0722c843a.png",
     "static/media/network.ico": "/keep-in-touch/static/media/network.f5bdbf8ce74642ae2431.ico",
-    "static/media/note.gif": "/keep-in-touch/static/media/note.2fe7a4e2a76b6c1fae79.gif",
     "static/media/profile.ico": "/keep-in-touch/static/media/profile.260815d242fba9cdd2b7.ico",
     "static/media/dialogs.ico": "/keep-in-touch/static/media/dialogs.13af134c42e092be5c6b.ico",
     "static/media/like.ico": "/keep-in-touch/static/media/like.0a3fcd46ec0ef2801fc6.ico",
     "static/media/logo.png": "/keep-in-touch/static/media/logo.0f91c10830df5a1845bd.png",
-    "static/media/music.png": "/keep-in-touch/static/media/music.5df7876b3e5863a598d6.png",
     "static/media/spinner.svg": "/keep-in-touch/static/media/spinner.8d8c1da9d8b66703cb3daeca9a52f070.svg",
     "index.html": "/keep-in-touch/index.html",
-    "main.e84d6ef1.css.map": "/keep-in-touch/static/css/main.e84d6ef1.css.map",
-    "main.8dc14f33.js.map": "/keep-in-touch/static/js/main.8dc14f33.js.map"
+    "main.e8e0a35e.css.map": "/keep-in-touch/static/css/main.e8e0a35e.css.map",
+    "main.fd70462f.js.map": "/keep-in-touch/static/js/main.fd70462f.js.map"
   },
   "entrypoints": [
-    "static/css/main.e84d6ef1.css",
-    "static/js/main.8dc14f33.js"
+    "static/css/main.e8e0a35e.css",
+    "static/js/main.fd70462f.js"
   ]
 }
