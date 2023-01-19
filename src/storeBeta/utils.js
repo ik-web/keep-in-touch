@@ -1,14 +1,14 @@
-export const authUserInStorage = {
+export const userInStorage = {
   get() {
-    return JSON.parse(sessionStorage.getItem("authUser"));
+    return JSON.parse(sessionStorage.getItem("user"));
   },
 
   set(user) {
-    sessionStorage.setItem("authUser", JSON.stringify(user));
+    sessionStorage.setItem("user", JSON.stringify(user));
   },
 
   remove() {
-    sessionStorage.removeItem("authUser");
+    sessionStorage.removeItem("user");
     return null;
   },
 
@@ -21,12 +21,12 @@ export const authUserInStorage = {
   },
 };
 
-export const getInitialAuthUser = () => {
-  return authUserInStorage.get() || {};
+export const getInitialUser = () => {
+  return userInStorage.get() || {};
 };
 
 export const resetState = () => (dispatch) => {
-  authUserInStorage.remove();
+  userInStorage.remove();
 
   // dispatch(setAuthUser(getInitialAuthUser()));
   // dispatch(setFollowings([], null, 0));

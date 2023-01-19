@@ -21,7 +21,7 @@
     display: inline-block;
     margin-bottom: 5px;
   
-    font-size: $font-size-mini;
+    font-size: $font-size-small;
     color: $color-dark;
   }
 
@@ -50,7 +50,7 @@
   }
   
   &__likesCounter {
-    font-size: $font-size-mini;
+    font-size: $font-size-small;
   }
 
   &__content {
@@ -59,7 +59,7 @@
   
   &__authorName {
     margin-bottom: 5px;
-    font-size: $font-size-mini;
+    font-size: $font-size-small;
     color: $color-dark;
 
     transition: color $transition-behavior;

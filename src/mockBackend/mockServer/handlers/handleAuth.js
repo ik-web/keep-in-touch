@@ -1,8 +1,8 @@
 import users from "../../mockData/users";
 
 const getUserByLogin = (login) => {
-  return users.find(user => user.login === login);
-}
+  return users.find((user) => user.login === login);
+};
 
 export const handleAuth = (body) => {
   const { login, password } = body;

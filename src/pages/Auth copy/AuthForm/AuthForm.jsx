@@ -1,14 +1,35 @@
-import classNames from "classnames";
 import { Field, Form } from "react-final-form";
 
 import classes from "./AuthForm.module.scss";
+import { CustomButton, CustomInput } from "components/UI";
+import { useDispatch } from "react-redux";
+import { fetchAuth } from "storeBeta/reducers/authReducer/actionCreators";
+import { useAuthSelector } from "storeBeta/selectors";
 
 export const AuthForm = () => {
-  const onSubmit = (e) => {
-    // fetchUserAuth(e);
-  }
+  const dispatch = useDispatch();
+  const { error: fetchError } = useAuthSelector();
 
-  const required = value => value ? undefined : true;
+  const onSubmit = (authForm) => {
+    dispatch(fetchAuth(authForm));
+  };
+
+  const validate = (value) => (value ? undefined : true);
+
+  const getPlaceholderText = (isEmptyField, fetchError, defaultPlaceholder) => {
+    if (isEmptyField) {
+      return `Enter your ${defaultPlaceholder}`;
+    }
+
+    if (fetchError) {
+      return "Incorrect data";
+    }
+
+    const placeholder =
+      defaultPlaceholder.charAt(0).toUpperCase() + defaultPlaceholder.slice(1);
+
+    return placeholder;
+  };
 
   return (
     <Form
@@ -16,35 +37,39 @@ export const AuthForm = () => {
       render={({ handleSubmit, submitting }) => (
         <form className={classes.AuthForm} onSubmit={handleSubmit}>
           <div className={classes.AuthForm__top}>
-            <Field name="login" validate={required}>
+            <Field name="login" validate={validate}>
               {({ input, meta }) => {
-                const isInvalid = meta.touched && meta.error;
+                const isEmptyField = meta.touched && meta.error;
 
                 return (
-                  <input
-                    type="text"
+                  <CustomInput
                     {...input}
-                    placeholder={isInvalid ? "Enter your login" : "Login"}
-                    className={classNames(classes.AuthForm__input, {
-                      [classes.AuthForm__input_required]: isInvalid,
-                    })}
+                    type="text"
+                    placeholder={getPlaceholderText(
+                      isEmptyField,
+                      fetchError,
+                      "login"
+                    )}
+                    isError={isEmptyField || fetchError}
                   />
                 );
               }}
             </Field>
 
-            <Field name="password" validate={required}>
+            <Field name="password" validate={validate}>
               {({ input, meta }) => {
-                const isInvalid = meta.touched && meta.error;
+                const isEmptyField = meta.touched && meta.error;
 
                 return (
-                  <input
+                  <CustomInput
                     type="text"
                     {...input}
-                    placeholder={isInvalid ? "Enter your password" : "Password"}
-                    className={classNames(classes.AuthForm__input, {
-                      [classes.AuthForm__input_required]: isInvalid,
-                    })}
+                    placeholder={getPlaceholderText(
+                      isEmptyField,
+                      fetchError,
+                      "password"
+                    )}
+                    isError={isEmptyField || fetchError}
                   />
                 );
               }}
@@ -62,13 +87,13 @@ export const AuthForm = () => {
               Remember me
             </label>
 
-            <button
+            <CustomButton
               className={classes.AuthForm__button}
               type="submit"
               disabled={submitting}
             >
               LogIn
-            </button>
+            </CustomButton>
           </div>
         </form>
       )}
