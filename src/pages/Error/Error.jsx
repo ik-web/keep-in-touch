@@ -1,18 +1,22 @@
-import React from "react";
+import { useRouteError } from "react-router-dom";
 
-import styles from "./Error.module.scss";
+import classes from "./Error.module.scss";
+import { getErrorMessage } from "./utils";
 
-const Error = () => {
+export const Error = () => {
+  const error = useRouteError();
+
   return (
-    <div className={styles.error}>
-      <h1 className={styles.error__title}>404</h1>
+    <div className={classes.error}>
+      <div className={classes.error__message}>
+        <h1 className={classes.error__title}>
+          {error.status}
+        </h1>
 
-      <p className={styles.error__subtitle}>
-        <span>Page not found</span>
-        <span>Please check your request</span>
-      </p>
+        <p className={classes.error__subtitle}>
+          {getErrorMessage(error)}
+        </p>
+      </div>
     </div>
   );
 };
-
-export default Error;

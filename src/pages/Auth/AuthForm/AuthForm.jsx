@@ -5,6 +5,7 @@ import { useAuthSelector } from "store/selectors";
 import { fetchAuth } from "store/reducers/authReducer/authActionCreators";
 
 import classes from "./AuthForm.module.scss";
+import { getPlaceholderText } from "./utils";
 import { CustomButton, CustomInput } from "components/UI";
 
 export const AuthForm = () => {
@@ -16,21 +17,6 @@ export const AuthForm = () => {
   };
 
   const validate = (value) => (value ? undefined : true);
-
-  const getPlaceholderText = (isEmptyField, fetchError, defaultPlaceholder) => {
-    if (isEmptyField) {
-      return `Enter your ${defaultPlaceholder}`;
-    }
-
-    if (fetchError) {
-      return "Incorrect data";
-    }
-
-    const placeholder =
-      defaultPlaceholder.charAt(0).toUpperCase() + defaultPlaceholder.slice(1);
-
-    return placeholder;
-  };
 
   return (
     <Form

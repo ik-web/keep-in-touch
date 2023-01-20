@@ -1,5 +1,5 @@
-@import "../../styles/utils/vars";
-@import "../../styles/utils/mixins";
+@import "styles/utils/vars";
+@import "styles/utils/mixins";
 
 .error {
   display: flex;
@@ -13,12 +13,52 @@
 
   @include xs {
     border-width: 12px;
+    font-size: $font-size-normal;
+  }
+
+  &__message {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 12px;
+
+    &,
+    &::before,
+    &::after {
+      width: 240px;
+      height: 240px;
+      background: $color-light;
+
+      @include xs {
+        width: 200px;
+        height: 200px;
+      }
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+    }
+
+    &::before {
+      transform: rotate(30deg);
+    }
+
+    &::after {
+      transform: rotate(60deg);
+    }
   }
 
   &__title {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
 
-    font-size: 80px;
+    font-size: 72px;
     line-height: 1;
     color: $color-dark;
 
@@ -32,10 +72,7 @@
     flex-direction: column;
 
     font-size: $font-size-large;
+    font-weight: 600;
     text-align: center;
-  }
-
-  @include xs {
-    font-size: $font-size-normal;
   }
 }

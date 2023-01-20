@@ -2,14 +2,16 @@ import { createHashRouter, RouterProvider } from "react-router-dom";
 
 import {
   Auth,
+  Home,
   Community,
-  Home
+  Error,
 } from "pages";
 
 const router = createHashRouter([
   {
     path: "/",
     element: <Home />,
+    errorElement: <Error />,
   },
   {
     path: "/auth",
