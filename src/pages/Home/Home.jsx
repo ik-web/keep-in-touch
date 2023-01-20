@@ -6,8 +6,7 @@ import { fetchAllPosts } from "store/reducers/postReducer/postActionCreators";
 
 import classes from "./Home.module.scss";
 import { CustomHint, Loader } from "components/UI";
-import { Layout } from "components/Layout";
-import { Post } from "components";
+import { Layout, Post } from "components";
 
 export const Home = () => {
   const dispatch = useDispatch();

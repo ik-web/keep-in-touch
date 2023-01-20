@@ -1,6 +1,10 @@
 import { createHashRouter, RouterProvider } from "react-router-dom";
 
-import { Auth, Home } from "pages";
+import {
+  Auth,
+  Community,
+  Home
+} from "pages";
 
 const router = createHashRouter([
   {
@@ -14,6 +18,10 @@ const router = createHashRouter([
   {
     path: "/home",
     element: <Home />,
+  },
+  {
+    path: "/community",
+    element: <Community />,
   },
 ]);
 

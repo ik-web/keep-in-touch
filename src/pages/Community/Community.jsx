@@ -1,20 +1,17 @@
-import React from 'react';
-import { GetImg } from '../../assets/img/GetImg';
-import styles from './Community.module.scss';
+import classes from "./Community.module.scss";
+import { CustomImg } from "components/UI";
+import { Layout } from "components";
 
-const Community = () => {
+export const Community = () => {
   return (
-    <div className={styles.community}>
-      <h1 className={styles.community__title}>
-        Community page
-      </h1>
+    <Layout>
+      <div className={classes.community}>
+        <h1 className={classes.community__title}>Community page</h1>
 
-      <div className={styles.community__imgContainer}>
-        <GetImg id='note' />
+        <div className={classes.community__imgContainer}>
+          <CustomImg id="note" />
+        </div>
       </div>
-    </div>
-
+    </Layout>
   );
 };
-
-export default Community;
