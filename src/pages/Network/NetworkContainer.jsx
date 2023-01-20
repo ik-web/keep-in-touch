@@ -4,7 +4,7 @@ import { compose } from "redux";
 import withAuthUser from "../../hocs/withAuthUser";
 
 import withLayout from "../../hocs/withLayout";
-import { fetchUsers } from "../../store/reducers/usersReducer";
+import { fetchUsers } from "../../oldReducers/usersReducer";
 import {
   getCurrentPageOfUsers,
   getPagesOfUsers,

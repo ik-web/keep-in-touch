@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 
-import { sendNewPost, updateNewPostText } from '../../../../store/reducers/postsReducer';
+import { sendNewPost, updateNewPostText } from '../../../../oldReducers/postsReducer';
 import { getNewPostText } from '../../../../store/selectors/postsSelectors';
 import NewPostForm from './NewPostForm';
 

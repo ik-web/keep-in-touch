@@ -1,14 +1,14 @@
 import { getDialogs } from "../handlers/handleDialogs";
-import { getUserFollowingsPage } from "../handlers/handleFollowings";
+import { getRequestFollowPage } from "../handlers/handleFollow";
 import { getOnlineStatus } from "../handlers/handleOnlineStatus";
 import { getPosts, getProfilePosts } from "../handlers/handlePosts";
 import { getProfile } from "../handlers/handleProfile";
 import { getUsers } from "../handlers/handleUsers";
 
-const methodGet = (requestQuery, userKey) => {
-  const requestQueryParts = requestQuery.split('/');
-  const endpoint = requestQueryParts[0];
-  const queryParameters = requestQueryParts.slice(1);
+const methodGet = (request, userKey) => {
+  const requestParts = request.split('/');
+  const endpoint = requestParts[0];
+  const queryParameters = requestParts.slice(1);
 
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -33,8 +33,8 @@ const methodGet = (requestQuery, userKey) => {
           resolve(getDialogs(userKey, ...queryParameters));
           break;
 
-        case "followings":
-          resolve(getUserFollowingsPage(userKey, ...queryParameters));
+        case "follow":
+          resolve(getRequestFollowPage(userKey, ...queryParameters));
           break;
 
         case "online":

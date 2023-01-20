@@ -8,8 +8,8 @@ import {
   fetchOnlineStatus,
   fetchProfile,
   setIsAuthUserProfile
-} from '../../store/reducers/profileReducer';
-import { fetchProfilePosts } from '../../store/reducers/postsReducer';
+} from '../../oldReducers/profileReducer';
+import { fetchProfilePosts } from '../../oldReducers/postsReducer';
 import Preloader from '../../shared/Preloader/Preloader';
 import Profile from './Profile';
 import withLayout from '../../hocs/withLayout';

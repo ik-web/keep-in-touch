@@ -1,6 +1,6 @@
 import { handleAuth } from "../handlers/handleAuth";
 import { postNewMessage } from "../handlers/handleDialogs";
-import { postFollowing } from "../handlers/handleFollowings";
+import { postFollow } from "../handlers/handleFollow";
 import { postNewPost } from "../handlers/handlePosts";
 
 const methodPost = (request, body, userKey) => {
@@ -20,7 +20,7 @@ const methodPost = (request, body, userKey) => {
           break;
 
         case "follow":
-          resolve(postFollowing(userKey, body));
+          resolve(postFollow(userKey, body));
           break;
 
         default:

@@ -1,14 +1,14 @@
 import { NavLink } from 'react-router-dom';
 
 import classes from './Header.module.scss';
-import { AppImage } from 'components/UI';
+import { CustomImg } from 'components/UI';
 
 export const Header = () => {
   return (
     <header className={classes.header}>
       <div className={classes.header__inner}>
         <NavLink to="/">
-          <AppImage id={'header-logo'} />
+          <CustomImg id={'header-logo'} />
         </NavLink>
         
         <h1 className={classes.header__title}>

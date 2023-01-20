@@ -1,8 +1,8 @@
 import classes from './SideNav.module.scss';
-import SideNavLink from './SideNavLink/SideNavLink';
+import { SideNavLink } from './SideNavLink/SideNavLink';
 
 export const SideNav = () => {
-  const authUserId = 1;
+  const userId = 1;
   const setNoContactSelected = false;
 
   const links = [
@@ -17,17 +17,17 @@ export const SideNav = () => {
       id: 'dialogs-icon'
     },
     {
-      path: '/community',
-      name: 'Community',
-      id: 'community-icon'
-    },
-    {
       path: '/network',
       name: 'Network',
       id: 'network-icon'
     },
     {
-      path: `/profile/${authUserId}`,
+      path: '/community',
+      name: 'Community',
+      id: 'community-icon'
+    },
+    {
+      path: `/profile/${userId}`,
       name: 'Profile',
       id: 'profile-icon'
     }

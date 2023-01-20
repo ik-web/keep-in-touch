@@ -1,26 +1,17 @@
-import { applyMiddleware, combineReducers, createStore } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
-import thunk from "redux-thunk";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
-import postsReducer from "./reducers/postsReducer";
-import dialogsReducer from "./reducers/dialogsReducer";
-import usersReducer from "./reducers/usersReducer";
-import profileReducer from "./reducers/profileReducer";
-import authReducer from "./reducers/authReducer";
-import followingReducer from "./reducers/followingReducer";
+import authReducer from "./reducers/authReducer/authSlice";
+import followReducer from "./reducers/followReducer/followSlice";
+import postReducer from "./reducers/postReducer/postSlice";
 
 const rootReducer = combineReducers({
-  auth: authReducer,
-  profile: profileReducer,
-  users: usersReducer,
-  posts: postsReducer,
-  dialogs: dialogsReducer,
-  followings: followingReducer,
+  authReducer,
+  followReducer,
+  postReducer,
 });
 
-const store = createStore(
-  rootReducer,
-  composeWithDevTools(applyMiddleware(thunk))
-);
-
-export default store;
+export const setupStore = () => {
+  return configureStore({
+    reducer: rootReducer,
+  });
+};

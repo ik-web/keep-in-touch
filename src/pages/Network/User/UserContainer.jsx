@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 
-import { follow, unfollow } from '../../../store/reducers/followingReducer';
+import { follow, unfollow } from '../../../oldReducers/followingReducer';
 import { getFollowings, getIsFollowingProcesses } from '../../../store/selectors/followingsSelectors';
 
 import User from './User';

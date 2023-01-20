@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 
-import { setIsContactSelected } from '../../../store/reducers/dialogsReducer';
+import { setIsContactSelected } from '../../../oldReducers/dialogsReducer';
 import { getDialogs, getIsContactSelected } from '../../../store/selectors/dialogsSelectors';
 import Contacts from './Contacts';
 

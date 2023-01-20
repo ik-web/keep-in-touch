@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { compose } from "redux";
 
 import ProfileStatus from "./ProfileStatus";
-import { putProfileStatus } from "../../../../store/reducers/profileReducer";
+import { putProfileStatus } from "../../../../oldReducers/profileReducer";
 import { useState } from "react";
 import { getIsAuthUserProfile, getProfileStatus } from "../../../../store/selectors/profileSelectors";
 

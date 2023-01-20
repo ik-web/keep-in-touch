@@ -1,15 +1,15 @@
-import { deleteFollowing } from "../handlers/handleFollowings";
+import { deleteFollow } from "../handlers/handleFollow";
 
-const methodDelete = (requestQuery, userKey) => {
-  const requestQueryParts = requestQuery.split('/');
-  const endpoint = requestQueryParts[0];
-  const queryParameters = requestQueryParts.slice(1);
+const methodDelete = (request, userKey) => {
+  const requestParts = request.split('/');
+  const endpoint = requestParts[0];
+  const queryParameters = requestParts.slice(1);
 
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       switch (endpoint) {
         case "unfollow":
-          resolve(deleteFollowing(userKey, ...queryParameters));
+          resolve(deleteFollow(userKey, ...queryParameters));
           break;
 
         default:

@@ -1,27 +1,39 @@
-import React from 'react';
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
-import Post from '../../shared/Post/Post';
-import Preloader from '../../shared/Preloader/Preloader';
-import WithNoData from '../../shared/WithNoData/WithNoData';
-import styles from './Home.module.scss';
+import { usePostSelector } from "store/selectors";
+import { fetchAllPosts } from "store/reducers/postReducer/postActionCreators";
 
-const Home = ({ posts, isPosts }) => {
+import classes from "./Home.module.scss";
+import { CustomHint, Loader } from "components/UI";
+import { Layout } from "components/Layout";
+import { Post } from "components";
+
+export const Home = () => {
+  const dispatch = useDispatch();
+  const { posts, loading } = usePostSelector();
+
+  useEffect(() => {
+    dispatch(fetchAllPosts());
+  }, []);
+
   return (
-    <div className={styles.home}>
-      {isPosts === null
-      ? <Preloader />
+    <Layout>
+      <div className={classes.home}>
+        {loading
+          ? <Loader />
+          : posts.length
+            ? <div className={classes.home__posts}>
+                {posts.map((post) => (
+                  <Post key={post.id} post={post} />
+                ))}
+              </div>
 
-      : posts.length 
-        ? <div className={styles.home__posts}>
-            {posts.map(post => (
-              <Post key={post.id} post={post} />
-            ))}
-          </div>
-            
-        : <WithNoData message={'There are no posts...'} />
-      }
-    </div>
+            : <CustomHint>
+                There are no posts...
+              </CustomHint>
+        }
+      </div>
+    </Layout>
   );
 };
-
-export default Home;

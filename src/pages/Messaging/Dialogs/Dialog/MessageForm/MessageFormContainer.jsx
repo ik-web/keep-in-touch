@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { compose } from "redux";
 
 import MessageForm from "./MessageForm";
-import { sendMessage } from "../../../../../store/reducers/dialogsReducer";
+import { sendMessage } from "../../../../../oldReducers/dialogsReducer";
 
 const MessageFormContainer = ({ dialogId, sendMessage }) => {
   const [ messageText, setMessageText ] = useState('');

@@ -2,7 +2,7 @@ import server from "../mockBackend/mockServer/mockServer";
 import { getUserKey } from "./authAPI";
 
 export const postsAPI = {
-  fetchPosts() {
+  fetchAllPosts() {
     return server.get('posts', getUserKey());
   },
 

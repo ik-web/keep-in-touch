@@ -1,33 +1,43 @@
-import React from 'react';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import Preloader from '../../shared/Preloader/Preloader';
-import LoginHint from './AuthHint/AuthHint';
-import AuthTitle from './AuthTitle/AuthTitle';
-import LoginFormContainer from './AuthForm/AuthFormContainer';
-import styles from './Auth.module.scss';
+import { useAuthSelector } from 'store/selectors';
 
-const Auth = ({ isLoading }) => {
+import classes from './Auth.module.scss';
+import { Loader } from 'components/UI';
+import { AuthTitle } from './AuthTitle/AuthTitle';
+import { AuthHint } from './AuthHint/AuthHint';
+import { AuthForm } from './AuthForm/AuthForm';
+
+export const Auth = () => {
+  const { user, loading } = useAuthSelector();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user.hasOwnProperty("id")) {
+      navigate("/home")
+    }
+  }, [user]) 
+
   return (
-    <div className={styles.auth}>
-      <div className={styles.auth__topBlock}>
+    <div className={classes.auth}>
+      <div className={classes.auth__topBlock}>
         <AuthTitle />
 
-        <p className={styles.auth__description}>
+        <p className={classes.auth__description}>
           The social network simulator
         </p>
       </div>
 
-      <div className={styles.auth__bottomBlock}>
-        {isLoading
-        ? <Preloader />
+      <div className={classes.auth__bottomBlock}>
+        {loading
+        ? <Loader />
         : <>
-            <LoginHint />
-            <LoginFormContainer />
+            <AuthHint />
+            <AuthForm />
           </>
         }
       </div>
     </div>
   );
 };
-
-export default Auth;

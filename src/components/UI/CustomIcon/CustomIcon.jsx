@@ -1,11 +1,11 @@
 import classes from './CustomIcon.module.scss';
-import logout from 'assets/icoB/logout.png';
-import like from 'assets/icoB/like.ico';
-import home from 'assets/icoB/home.png';
-import dialogs from 'assets/icoB/dialogs.ico';
-import network from 'assets/icoB/network.ico';
-import community from 'assets/icoB/community.png';
-import profile from 'assets/icoB/profile.ico';
+import logout from 'assets/ico/logout.png';
+import like from 'assets/ico/like.ico';
+import home from 'assets/ico/home.png';
+import dialogs from 'assets/ico/dialogs.ico';
+import network from 'assets/ico/network.ico';
+import community from 'assets/ico/community.png';
+import profile from 'assets/ico/profile.ico';
 
 export const CustomIcon = ({ id }) => {
   switch (id) {

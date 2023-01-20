@@ -1,7 +1,7 @@
 import classes from './CustomImg.module.scss'
-import headerLogo from 'assets/imgB/logo.png';
-import spinner from 'assets/imgB/spinner.svg';
-import community from 'assets/imgB/community.png';
+import headerLogo from 'assets/img/logo.png';
+import spinner from 'assets/img/spinner.svg';
+import community from 'assets/img/community.png';
 
 export const CustomImg = ({ id, ...props }) => {
   switch (id) {

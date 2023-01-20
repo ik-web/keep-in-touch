@@ -1,7 +1,7 @@
 import server from "../mockBackend/mockServer/mockServer";
-import authUserInStorage from "../store/functions/handleSessionStorage";
+import { userInStorage } from "store/utils";
 
-export const getUserKey = () => authUserInStorage.getId();
+export const getUserKey = () => userInStorage.getId();
 
 export const authAPI = {
   authorization(authInfo) {

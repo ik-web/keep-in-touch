@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { NavLink } from "react-router-dom";
 
 import classes from "./SideNavLink.module.scss";
-import { AppIcon } from "components/UI";
+import { CustomIcon } from "components/UI";
 
 export const SideNavLink = ({ link, onSetNoContactSelected }) => {
   return (
@@ -14,7 +14,7 @@ export const SideNavLink = ({ link, onSetNoContactSelected }) => {
       }
       onClick={onSetNoContactSelected}
     >
-      <AppIcon id={link.id} />
+      <CustomIcon id={link.id} />
       {link.name}
     </NavLink>
   );

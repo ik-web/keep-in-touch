@@ -1,1 +1,2 @@
-export * from "./AvatarLink";
+export * from "./Post/Post";
+export * from "./AvatarLink/AvatarLink";

@@ -42,7 +42,7 @@
   &__main {
     display: grid;
 
-    border-radius: 12px;
+    border-radius: $border-radius-block;
       
     overflow-y: scroll;
 
@@ -55,7 +55,7 @@
     }
 
     @include xs {
-      margin: 8px;
+      margin: 12px;
     }
   }
 }
