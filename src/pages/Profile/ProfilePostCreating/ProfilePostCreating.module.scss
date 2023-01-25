@@ -1,0 +1,31 @@
+@import 'styles/utils/vars';
+@import 'styles/utils/mixins';
+
+.newPost {
+  width: $width-profile-content-desctop;
+
+  @include xl {
+    width: $width-profile-content-laptop;
+  }
+
+  @include md {
+    text-align: center;
+  }
+
+  @include sm {
+    gap: 15px;
+    width: $width-profile-content-tablet;
+  }
+
+  @include xs {
+    width: $width-profile-content-mobile;
+  }
+  
+  &__form {
+    margin-top: 20px;
+
+    @include sm {
+      margin-top: 16px;
+    }
+  }
+}

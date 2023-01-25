@@ -1,8 +1,9 @@
+import { useAuthSelector } from 'store/selectors';
 import classes from './SideNav.module.scss';
 import { SideNavLink } from './SideNavLink/SideNavLink';
 
 export const SideNav = () => {
-  const userId = 1;
+  const {user} = useAuthSelector();
   const setNoContactSelected = false;
 
   const links = [
@@ -27,7 +28,7 @@ export const SideNav = () => {
       id: 'community-icon'
     },
     {
-      path: `/profile/${userId}`,
+      path: `/profile/${user.id}`,
       name: 'Profile',
       id: 'profile-icon'
     }

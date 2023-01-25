@@ -10,7 +10,7 @@
 
   background: $color-very-light;
   border: 1px dashed $color-normal;
-  border-radius: 10px;
+  border-radius: $border-radius-block;
   word-break: break-word;
 
   @include xl {

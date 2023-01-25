@@ -2,11 +2,11 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 import { usePostSelector } from "store/selectors";
-import { fetchAllPosts } from "store/reducers/postReducer/postActionCreators";
+import { fetchAllPosts } from "store/reducers";
 
 import classes from "./Home.module.scss";
-import { CustomHint, Loader } from "components/UI";
-import { Layout, Post } from "components";
+import { CustomTitle, Loader } from "components/UI";
+import { Layout, PostList, PostsContainer } from "components";
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -18,21 +18,14 @@ export const Home = () => {
 
   return (
     <Layout>
-      <div className={classes.home}>
+      <PostsContainer className={classes.home} dataLoading={loading}>
         {loading
           ? <Loader />
           : posts.length
-            ? <div className={classes.home__posts}>
-                {posts.map((post) => (
-                  <Post key={post.id} post={post} />
-                ))}
-              </div>
-
-            : <CustomHint>
-                There are no posts...
-              </CustomHint>
+            ? <PostList posts={posts} />
+            : <CustomTitle>There are no posts...</CustomTitle>
         }
-      </div>
+      </PostsContainer>
     </Layout>
   );
 };

@@ -39,7 +39,7 @@
     font-size: $font-size-large;
     
     border: 1px solid $color-normal;
-    border-radius: 10px 0 0 10px;
+    border-radius: $border-radius-block 0 0 $border-radius-block;
     outline: none;
   }
   
@@ -56,7 +56,7 @@
     font-size: 16px;
     background: $color-normal;
     border: 1px solid $color-normal;
-    border-radius: 0 10px 10px 0;
+    border-radius: 0 $border-radius-block $border-radius-block 0;
     outline: none;
     cursor: pointer;
   

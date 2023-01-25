@@ -1,0 +1,50 @@
+@import 'styles/utils/vars';
+@import 'styles/utils/mixins';
+
+.newPostForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+  &__textarea {
+    display: block;
+    width: 100%;
+    min-height: 150px;
+    padding: 10px;
+  
+    font-size: $font-size-large;
+    
+    border: 1px solid $color-normal;
+    border-radius: $border-radius-block;
+    outline: none;
+    resize: vertical;
+
+    @include md {
+      display: block;
+      padding: 10px;
+    }
+
+    @include xs {
+      min-height: 100px;
+    }
+  }
+  
+  &__textarea::placeholder {
+    font-family: sans-serif;
+    color: $color-normal;
+  }
+  
+  &__textarea:focus.textarea::placeholder {
+    color: $color-dark;
+  }
+  
+  &__button {
+    width: 200px;
+    height: 40px;
+    margin: 0 auto;
+
+    @include xs {
+      width: 100%;
+    }
+  }
+}

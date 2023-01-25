@@ -1,0 +1,25 @@
+@import "styles/utils/vars";
+@import "styles/utils/mixins";
+
+.headerMenu {
+  &__menuButton {
+    &:focus,
+    &:hover {
+      color: unset;
+      background: none;
+    }
+  }
+
+  &__itemButton {
+    background: transparent;
+  }
+
+  &__avatar {
+    border-color: $color-light;
+
+    @include xs {
+      width: 44px;
+      height: 44px;
+    }
+  }
+}

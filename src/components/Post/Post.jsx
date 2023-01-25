@@ -1,43 +1,37 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import { NavLink } from "react-router-dom";
 
-import classes from './Post.module.scss';
-import { CustomIcon } from 'components/UI';
-import { AvatarLink } from 'components';
+import classes from "./Post.module.scss";
+import { CustomIcon, CustomTitle } from "components/UI";
+import { LinkProfileAvatar } from "components";
 
 export const Post = ({ post }) => {
-  const navLinkPath = `/profile/${post.userId}`;
+  const profilePath = `/profile/${post.userId}`;
 
   return (
-    <article className={classes.post}> 
-      <div className={classes.post__author}>
-        <NavLink to={navLinkPath}  className={classes.post__authorContainer}>
-          <AvatarLink
-            src={post.authorAvatar}
-          />
-        </NavLink>
+    <article className={classes.post}>
+      <div className={classes.post__rightContent}>
+        <div>
+          <LinkProfileAvatar src={post.authorAvatar} to={profilePath} />
+        </div>
 
         <button className={classes.post__likeBtn}>
           <span className={classes.post__likeIcon}>
-            <CustomIcon id='like-icon' />
+            <CustomIcon id="like-icon" />
           </span>
 
-          <span className={classes.post__likesCounter}>
-            {post.likes}
-          </span>
+          <span className={classes.post__likesCounter}>{post.likes}</span>
         </button>
       </div>
 
-      <div className={classes.post__content}>
-        <NavLink to={navLinkPath}>
-          <h3 className={classes.post__authorName}>
+      <div className={classes.post__leftContent}>
+        <NavLink to={profilePath}>
+          <CustomTitle tag="h4" align="left">
             {post.authorName}:
-          </h3>
+          </CustomTitle>
         </NavLink>
 
-        <p>
-          {post.text}
-        </p>
+        <p>{post.text}</p>
       </div>
     </article>
   );

@@ -1,0 +1,78 @@
+@import "styles/utils/vars";
+@import "styles/utils/mixins";
+
+.menu {
+  display: flex;
+
+  &__button {
+    position: relative;
+    z-index: 15;
+    padding: 0;
+
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+
+    display: none;
+  }
+
+  &__list {
+    position: absolute;
+    top: 56px;
+    right: 16px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    padding: 16px;
+    width: max-content;
+
+    background-color: $color-secondary;
+    border-radius: $border-radius-block;
+
+    box-shadow: $box-shadow;
+
+    @include xs {
+      right: 12px;
+      padding: 20px;
+    }
+  }
+
+  &__item {
+    margin: 0;
+  }
+
+  &__itemButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    min-width: 200px;
+    height: 40px;
+    padding: 0 12px;
+  }
+
+  &__itemName {
+    line-height: 1;
+  }
+
+  &__itemIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  &_isOpen.menu__overlay {
+    display: block;
+  }
+}

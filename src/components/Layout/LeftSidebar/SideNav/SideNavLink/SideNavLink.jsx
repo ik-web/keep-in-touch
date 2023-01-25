@@ -14,8 +14,13 @@ export const SideNavLink = ({ link, onSetNoContactSelected }) => {
       }
       onClick={onSetNoContactSelected}
     >
-      <CustomIcon id={link.id} />
-      {link.name}
+      <span className={classes.link__icon}>
+        <CustomIcon id={link.id} />
+      </span>
+
+      <span>
+        {link.name}
+      </span>
     </NavLink>
   );
 };

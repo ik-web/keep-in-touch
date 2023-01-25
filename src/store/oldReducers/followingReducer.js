@@ -1,4 +1,4 @@
-import { followAPI } from "api/followAPI";
+import { followAPI } from "services/followAPI";
 
 const SET_FOLLOWINGS = "following/SET_FOLLOWINGS";
 const SET_IS_FOLLOWING_PROCESS = "following/SET_IS_FOLLOWING_PROCESS";

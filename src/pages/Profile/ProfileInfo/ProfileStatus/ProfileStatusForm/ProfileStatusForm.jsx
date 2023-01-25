@@ -1,28 +1,38 @@
-import React from 'react';
+import { useState } from "react";
 
-import styles from './ProfileStatusForm.module.scss';
+import { useProfileSelector } from "store/selectors";
 
-const ProfileStatusForm = ({
-  status,
-  handleSubmit,
-  handleStatusChange,
-  deactivateEditMode,
-}) => {
+import classes from "./ProfileStatusForm.module.scss";
+
+export const ProfileStatusForm = ({ deactivateEditMode }) => {
+  const { profile } = useProfileSelector();
+  const [status, setStatus] = useState(profile.status);
+
+  const handleChange = (e) => {
+    setStatus(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    return false;
+  };
+
+  const handleBlur = () => {
+    deactivateEditMode(status);
+  }
 
   return (
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        className={styles.statusInputField}
-        placeholder='Enter your status...'
+        className={classes.statusInput}
+        placeholder="Enter your status..."
         value={status}
-        onChange={handleStatusChange}
-        onBlur={deactivateEditMode}
+        onChange={handleChange}
+        onBlur={handleBlur}
         autoFocus={true}
         maxLength={80}
       />
     </form>
   );
 };
-
-export default ProfileStatusForm;

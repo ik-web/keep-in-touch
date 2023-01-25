@@ -1,15 +1,10 @@
-@import '../../../styles/utils/vars';
-@import '../../../styles/utils/mixins';
+@import 'styles/utils/vars';
+@import 'styles/utils/mixins';
 
-.userInfo {
-  margin-bottom: 40px;
-  padding-bottom: 40px;
+.profile {
 
-  border-bottom: 4px double $color-extra-normal;
-
-  @include sm {
-    margin-bottom: 30px;
-    padding-bottom: 30px;
+  &__images {
+    margin-bottom: 56px;
   }
   
   &__info {
@@ -34,31 +29,23 @@
     }
   }
   
-  &__name {
-    font-size: 36px;
-
-    @include md {
-      padding-left: 0;
-      text-align: center;
-    }
-
-    @include sm {
-      font-size: 32px;
-    }
-
-    @include xs {
-      font-size: 28px;
-    }
-  }
-  
-  &__infoItem {
-    text-align: center;
-    font-style: italic;
-    font-family: $font-family-text;
-  }
-  
   &__city {
     display: flex;
     gap: 8px;
+  }
+
+  &__about {
+    padding: 12px 16px 16px;
+    text-align: center;
+    background: $color-very-light;
+    border-radius: $border-radius-block;
+  }
+  
+  &__aboutTitle {
+    margin-bottom: 4px;
+  }
+  
+  &__aboutDescribe {
+    text-align: left;
   }
 }

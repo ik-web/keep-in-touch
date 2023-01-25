@@ -7,7 +7,7 @@
   padding: 35px 0;
 
   background: $color-normal;
-  border-radius: 12px;
+  border-radius: $border-radius-block;
 
   @include md {
     order: 2;

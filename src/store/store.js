@@ -1,13 +1,21 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
-import authReducer from "./reducers/authReducer/authSlice";
-import followReducer from "./reducers/followReducer/followSlice";
-import postReducer from "./reducers/postReducer/postSlice";
-
-const rootReducer = combineReducers({
+import {
   authReducer,
   followReducer,
+  onlineStatusReducer,
   postReducer,
+  profilePostReducer,
+  profileReducer,
+} from "./reducers";
+
+const rootReducer = combineReducers({
+  auth: authReducer,
+  follow: followReducer,
+  post: postReducer,
+  profile: profileReducer,
+  profilePosts: profilePostReducer,
+  onlineStatus: onlineStatusReducer,
 });
 
 export const setupStore = () => {

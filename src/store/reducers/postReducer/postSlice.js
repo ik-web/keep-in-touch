@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { fetchAllPosts } from "./postActionCreators";
+import { fetchAllPosts } from "./postAC";
 
 const initialState = {
   posts: [],
@@ -32,4 +32,4 @@ const postSlice = createSlice({
   },
 });
 
-export default postSlice.reducer;
+export const postReducer = postSlice.reducer;

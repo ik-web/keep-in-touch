@@ -4,6 +4,7 @@ import {
   Auth,
   Home,
   Community,
+  Profile,
   Error,
 } from "pages";
 
@@ -24,6 +25,10 @@ const router = createHashRouter([
   {
     path: "/community",
     element: <Community />,
+  },
+  {
+    path: "/profile/:profileId",
+    element: <Profile />,
   },
 ]);
 

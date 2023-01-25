@@ -1,34 +1,24 @@
-import React from "react";
-import { connect } from "react-redux";
 import classNames from "classnames";
 
-import styles from "./ProfileStatusValue.module.scss";
+import { useProfileSelector } from "store/selectors";
 
-const ProfileStatusValue = ({ 
-  isAuthUserProfile,
-  status,
-  activateEditMode
-}) => {
+import classes from "./ProfileStatusValue.module.scss";
+
+export const ProfileStatusValue = ({ activateEditMode }) => {
+  const { profile, isUserProfile } = useProfileSelector();
 
   return (
     <>
-      {!isAuthUserProfile && !status 
+      {!isUserProfile && !profile.status 
         ? <div></div>
-        : <div
-            className={classNames(styles.statusValue, {
-              [styles.authUserStatusValue]: isAuthUserProfile,
-            })}
-            onClick={activateEditMode}
-          >
-            {status.trim() || "Click here to set status"}
-          </div>
+        : <div className={classNames(classes.statusValue, {
+            [classes.authUserStatusValue]: isUserProfile,
+          })}
+          onClick={activateEditMode}
+        >
+          {profile.status.trim() || "Click here to set status"}
+        </div>
       }
     </>
   );
 };
-
-const mapStateToProps = (state) => ({
-  isAuthUserProfile: state.profile.isAuthUserProfile
-})
-
-export default connect(mapStateToProps)(ProfileStatusValue);

@@ -3,36 +3,32 @@
 
 .post {
   display: flex;
-
+  
   padding: 16px;
 
   background: $color-extra-light;
   border: 1px dashed $color-normal;
-  border-radius: 12px;
+  border-radius: $border-radius-block;
 
   word-break: break-word;
 
-  &__authorContainer {
-    display: block;
-    margin: 0 auto 12px;
+  &__rightContent {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
-
-  &__author {
-    display: inline-block;
-    margin-bottom: 4px;
   
-    font-size: $font-size-small;
-    color: $color-dark;
-  }
-
   &__likeBtn {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  
+    
     margin: 0 auto;
     padding: 4px 6px 4px 4px;
     width: 100%;
+
+    font-size: $font-size-small;
+    color: $color-dark;
   
     background: $color-extra-normal;
     border: none;
@@ -53,7 +49,7 @@
     font-size: $font-size-small;
   }
 
-  &__content {
+  &__leftContent {
     margin-left: 16px;
   }
   

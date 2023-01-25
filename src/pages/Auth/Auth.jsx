@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { useAuthSelector } from 'store/selectors';
 
 import classes from './Auth.module.scss';
-import { Loader } from 'components/UI';
-import { AuthTitle } from './AuthTitle/AuthTitle';
+import { CustomTitle, Loader } from 'components/UI';
+import { DecorText } from 'components';
 import { AuthHint } from './AuthHint/AuthHint';
 import { AuthForm } from './AuthForm/AuthForm';
 
@@ -22,7 +22,11 @@ export const Auth = () => {
   return (
     <div className={classes.auth}>
       <div className={classes.auth__topBlock}>
-        <AuthTitle />
+        <CustomTitle tag="h1">
+          <span>Welcome <br /> to</span>
+          <br />
+          <DecorText>Keep in touch</DecorText>
+        </CustomTitle>
 
         <p className={classes.auth__description}>
           The social network simulator

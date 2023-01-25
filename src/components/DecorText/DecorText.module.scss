@@ -1,0 +1,37 @@
+@import "styles/utils/vars";
+@import "styles/utils/mixins";
+
+.decorTitle {
+  position: relative;
+  display: inline-block;
+
+  font-size: 80px;
+  color: $color-dark;
+
+  @include xs {
+    font-size: 44px;
+  }
+
+  @include xs-landscape {
+    font-size: 44px;
+  }
+
+  &:after {
+    content: "Keep in touch";
+    position: absolute;
+    left: 0;
+    width: 100%;
+
+    font-size: 77px;
+    font-weight: 400;
+    color: $color-light;
+
+    @include xs {
+      font-size: 42px;
+    }
+
+    @include xs-landscape {
+      font-size: 42px;
+    }
+  }
+}

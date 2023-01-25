@@ -1,38 +1,38 @@
-import React from 'react';
+import { useProfileSelector } from "store/selectors";
 
-import styles from './ProfileInfo.module.scss';
-import OnlineStatus from '../../../shared/OnlineStatus/OnlineStatus';
-import ProfileStatusContainer from './ProfileStatus/ProfileStatusContainer';
-import ProfileAbout from './ProfileAbout/ProfileAbout';
-import ProfileImages from './ProfileImages/ProfileImages';
+import classes from "./ProfileInfo.module.scss";
+import { CustomTitle } from "components/UI";
+import { OnlineStatus } from "components";
+import { ProfileStatus } from "./ProfileStatus/ProfileStatus";
 
-const ProfileInfo = ({ profile, onlineStatus }) => {
+export const ProfileInfo = () => {
+  const { profile } = useProfileSelector();
+
   return (
-    <section className={styles.userInfo}>
-      <ProfileImages wallpaper={profile.wallpaper} avatar={profile.avatar} />
-
-      <div className={styles.userInfo__info}>
-        <h2 className={styles.userInfo__name}>
+    <div className={classes.profile}>
+      <div className={classes.profile__info}>
+        <CustomTitle tag="h1">
           {profile.name}
-        </h2>
+        </CustomTitle>
 
-        <ProfileStatusContainer />
-        <OnlineStatus onlineStatus={onlineStatus} />
+        <ProfileStatus />
+        <OnlineStatus />
 
-        <div
-          className={`${styles.userInfo__city} ${styles.userInfo__infoItem}`}
-        >
-          <h4>
-            Lives in:
-          </h4>
-
-          {profile.city}
+        <div className={classes.profile__city}>
+          <h4>Lives in:</h4>
+          <span>{profile.city}</span>
         </div>
 
-        <ProfileAbout profileAbout={profile.about} />
+        <div className={classes.profile__about}>
+          <h4 className={classes.profile__aboutTitle}>
+            About me:
+          </h4>
+
+          <p className={classes.profile__aboutDescribe}>
+            {profile.about}
+          </p>
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
-
-export default ProfileInfo;

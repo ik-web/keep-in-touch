@@ -12,7 +12,7 @@
 
   background-color: $color-very-light;
   border: 1px solid $color-normal;
-  border-radius: 10px;
+  border-radius: $border-radius-block;
 
   transition: box-shadow $transition-behavior;
 
@@ -29,7 +29,7 @@
   }
   
   &__avatar {
-    border-radius: 6px;
+    border-radius: $border-radius-block;
     width: 100px;
     height: 100px;
 

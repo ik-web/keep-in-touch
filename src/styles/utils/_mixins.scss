@@ -44,7 +44,7 @@
 
   text-align: center;
 
-  border-radius: 12px;
+  border-radius: $border-radius-block;
 }
 
 @mixin button {
@@ -53,7 +53,7 @@
 
   background: $color-normal;
   border: 2px solid transparent;
-  border-radius: 10px;
+  border-radius: $border-radius-block;
   outline: none;
   cursor: pointer;
 

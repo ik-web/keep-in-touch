@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { fetchAuth } from "./authActionCreators";
-import { getInitialUser, userInStorage } from "store/utils";
+import { fetchAuth, logout } from "./authAC";
+import { getInitialUser } from "store/utils";
 
 const initialState = {
   user: getInitialUser(),
@@ -21,15 +21,20 @@ export const authSlice = createSlice({
     builder.addCase(fetchAuth.fulfilled, (state, action) => {
       state.loading = false;
       state.error = "";
-      state.user = action.payload;
-      userInStorage.set(action.payload);
+      state.user = getInitialUser();
     });
 
     builder.addCase(fetchAuth.rejected, (state, action) => {
       state.loading = false;
       state.error = action.payload;
     });
+
+    builder.addCase(logout.fulfilled, (state) => {
+      state.loading = false;
+      state.error = "";
+      state.user = getInitialUser();
+    });
   },
 });
 
-export default authSlice.reducer;
+export const authReducer = authSlice.reducer;

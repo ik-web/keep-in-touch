@@ -2,7 +2,7 @@ import { Field, Form } from "react-final-form";
 import { useDispatch } from "react-redux";
 
 import { useAuthSelector } from "store/selectors";
-import { fetchAuth } from "store/reducers/authReducer/authActionCreators";
+import { fetchAuth } from "store/reducers";
 
 import classes from "./AuthForm.module.scss";
 import { getPlaceholderText } from "./utils";
@@ -74,13 +74,15 @@ export const AuthForm = () => {
               Remember me
             </label>
 
-            <CustomButton
-              className={classes.AuthForm__button}
-              type="submit"
-              disabled={submitting}
-            >
-              LogIn
-            </CustomButton>
+            <div>
+              <CustomButton
+                type="submit"
+                disabled={submitting}
+                className={classes.AuthForm__button}
+              >
+                LogIn
+              </CustomButton>
+            </div>
           </div>
         </form>
       )}

@@ -1,34 +1,30 @@
-import React from 'react';
-import Post from '../../../shared/Post/Post';
-import styles from './ProfilePosts.module.scss';
+import { useProfilePostsSelector, useProfileSelector } from "store/selectors";
 
-const ProfilePosts = ({ isAuthUserProfile, profilePosts }) => {
-  const isProfilePosts = profilePosts.length > 0;
-  let authorName;
+import classes from "./ProfilePosts.module.scss";
+import { PostList, PostsContainer } from "components";
+import { CustomTitle, Loader } from "components/UI";
 
-  if (isProfilePosts) {
-    authorName = profilePosts[0].author;
-  }
+export const ProfilePosts = ({ isUserProfile }) => {
+  const { posts, loading } = useProfilePostsSelector();
+  const { profile } = useProfileSelector();
 
   return (
-    <>
-      {isProfilePosts &&
-        <section className={styles.posts}>
-            <h3 className={styles.posts__title}>
-              All {isAuthUserProfile ? 'my' : authorName + '\'s'} publications:
-            </h3>
+    <PostsContainer className={classes.posts}>
+      {loading
+        ? <Loader />
+        : posts.length > 0
+            ? <>
+                <CustomTitle tag="h3" className={classes.posts__title}>
+                  All {isUserProfile ? "my" : `${profile.name}'s` } posts:
+                </CustomTitle>
 
-          <div className={styles.posts__inner}>
-            {profilePosts.map(post => (
-              <div className={styles.posts__post} key={post.id}>
-                <Post post={post}/>
-              </div>
-            ))}       
-          </div>
-        </section>
+                <PostList posts={posts} />
+              </>
+
+            : <CustomTitle tag="h3">
+                There are currently no posts...
+              </CustomTitle>
       }
-    </>
+    </PostsContainer>
   );
 };
-
-export default ProfilePosts;

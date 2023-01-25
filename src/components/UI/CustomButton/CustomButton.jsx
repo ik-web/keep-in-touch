@@ -1,8 +1,11 @@
 import classes from "./CustomButton.module.scss";
 
-export const CustomButton = ({ children, ...props }) => {
+export const CustomButton = ({ children, className, ...props }) => {
   return (
-    <button {...props} className={classes.button}>
+    <button
+      {...props}
+      className={`${classes.button} ${className}`}
+    >
       {children}
     </button>
   );

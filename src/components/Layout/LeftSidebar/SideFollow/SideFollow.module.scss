@@ -8,20 +8,13 @@
     display: none;
   }
 
-  &__title {
-    margin: 0 0 12px;
-
-    font-size: $font-size-normal;
-    text-align: center;
-    color: $color-dark;
-  }
-
   &__list {
     display: flex;
     justify-content: center;
     gap: 12px;
-
-    border-radius: 12px;
+    
+    margin-top: 12px;
+    border-radius: $border-radius-block;
 
     @include md {
       gap: 12px;

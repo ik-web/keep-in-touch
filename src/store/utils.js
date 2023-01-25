@@ -1,3 +1,5 @@
+import { useDispatch } from "react-redux";
+
 export const userInStorage = {
   get() {
     return JSON.parse(sessionStorage.getItem("user"));
@@ -25,10 +27,9 @@ export const getInitialUser = () => {
   return userInStorage.get() || {};
 };
 
-export const resetState = () => (dispatch) => {
+export const resetState = () => {
   userInStorage.remove();
-
-  // dispatch(setAuthUser(getInitialAuthUser()));
+  // useDispatch(setAuthUser(getInitialAuthUser()));
   // dispatch(setFollowings([], null, 0));
   // dispatch(setPosts([], null));
   // dispatch(setDialogs([], null));

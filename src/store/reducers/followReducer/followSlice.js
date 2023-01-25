@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { fetchFollow } from "./followActionCreators";
+import { fetchFollow } from "./followAC";
 
 const initialState = {
   follow: [],
@@ -28,8 +28,8 @@ const followSlice = createSlice({
     builder.addCase(fetchFollow.rejected, (state, action) => {
       state.loading = false;
       state.error = action.payload;
-    })
+    });
   },
 });
 
-export default followSlice.reducer;
+export const followReducer = followSlice.reducer;

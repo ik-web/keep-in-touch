@@ -23,7 +23,7 @@
     color: $color-secondary;
 
     border: 1px solid $color-secondary;
-    border-radius: 12px;
+    border-radius: $border-radius-block;
   }
 
   @include xs {
@@ -53,6 +53,15 @@
     @include xs {
       color: transparent;
       background: transparent;
+    }
+  }
+
+  &__icon {
+    display: none;
+
+    @include xs {
+      z-index: 1;
+      display: block;
     }
   }
 

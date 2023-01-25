@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import FollowingButton from '../../../shared/FollowingButton/FollowingButton';
 import MessageButton from '../../../shared/MessageButton/MessageButton';
-import OnlineStatus from '../../../shared/OnlineStatus/OnlineStatus';
+import OnlineStatus from '../../../components/OnlineStatus/OnlineStatus';
 import styles from './User.module.scss';
 
 const User = ({
