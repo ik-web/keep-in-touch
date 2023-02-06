@@ -23,14 +23,14 @@ export const getProfile = (userId, profileId) => {
 };
 
 export const putProfileStatus = (userId, body) => {
+  updateOnlineStatus(userId);
+
   const { status } = body;
   const user = getUser(userId);
 
   if (user) {
-    updateOnlineStatus(userId);
-
     user.status = status;
-  
-    return {statusCode: 200};
+
+    return {statusCode: 200, data: status};
   }
 };

@@ -11,7 +11,7 @@ const methodPut = (request, body, userKey) => {
         default:
           reject("404 (not found)");
       }
-    }, 378);
+    }, 225);
   });
 };
 

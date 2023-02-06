@@ -26,7 +26,7 @@ export const putProfileStatus = createAsyncThunk(
       const response = await profileAPI.putProfileStatus(profileStatus);
 
       if (response.statusCode === 200) {
-        return profileStatus;
+        return response.data;
       }
 
       throw new Error("Something went wrong");

@@ -44,7 +44,7 @@ const methodGet = (request, userKey) => {
         default:
           reject("404 (not found)");
       }
-    }, 332);
+    }, 225);
   });
 };
 

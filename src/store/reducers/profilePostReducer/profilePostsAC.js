@@ -26,7 +26,7 @@ export const postNewPost = createAsyncThunk(
       const response = await postAPI.postNewPost(newPost.text);
 
       if (response.statusCode === 200) {
-        return newPost;
+        return response.data;
       } else {
         throw new Error("Something went wrong");
       }

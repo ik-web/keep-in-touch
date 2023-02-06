@@ -4,7 +4,7 @@ export const Footer = () => {
   return (
     <footer className={classes.footer}>
       <span>
-        "Keep in touch" - 2022. Copyright
+        "Keep in touch" - 2023. Copyright
       </span>
 
       <a 

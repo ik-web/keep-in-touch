@@ -15,7 +15,7 @@ const methodDelete = (request, userKey) => {
         default:
           reject("404 (not found)");
       }
-    }, 334);
+    }, 225);
   });
 };
 

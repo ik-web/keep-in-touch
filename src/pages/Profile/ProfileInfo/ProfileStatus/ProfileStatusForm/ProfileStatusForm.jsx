@@ -14,7 +14,7 @@ export const ProfileStatusForm = ({ deactivateEditMode }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    return false;
+    deactivateEditMode(status);
   };
 
   const handleBlur = () => {
