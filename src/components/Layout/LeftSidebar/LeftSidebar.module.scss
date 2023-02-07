@@ -2,23 +2,21 @@
 @import "styles/utils/mixins";
 
 .leftSidebar {
-  grid-area: leftSidebar;
-  margin-left: 16px;
-  padding: 35px 0;
+  @include sidebar;
 
-  background: $color-normal;
-  border-radius: $border-radius-block;
-
-  @include md {
+  @include sm {
+    top: 0;
     order: 2;
-    margin: 0;
-    padding: 20px 16px;
+
+    margin: 0 calc(0px - $page_indent);
+    padding: 20px $page_indent;
 
     border-radius: 0;
   }
 
   @include xs {
-    padding: 6px 20px;
+    margin: 0 calc(0px - $page_indent_mobile);
+    padding: 6px $page_indent_mobile;
     background-color: $color-dark;
   }
 }

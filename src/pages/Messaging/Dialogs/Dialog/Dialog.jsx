@@ -1,16 +1,16 @@
 import React from 'react';
 
-import Message from './Message/Message';
-import MessageFormContainer from './MessageForm/MessageFormContainer';
-import styles from './Dialog.module.scss';
+import classes from './Dialog.module.scss';
+import { Message } from './Message/Message';
+import { MessageForm } from './MessageForm/MessageForm';
 
-const Dialog = ({
+export const Dialog = ({
   authUser,
   dialog
 }) => {
   return (
-    <li className={styles.dialog}>
-      <ul className={styles.dialog__messages}>
+    <li className={classes.dialog}>
+      <ul className={classes.dialog__messages}>
         {dialog.messages.map(message => (
           <Message 
             authUser={authUser}
@@ -20,9 +20,7 @@ const Dialog = ({
         )).reverse()}
       </ul>
 
-      <MessageFormContainer dialogId={dialog.id} />   
+      <MessageForm dialogId={dialog.id} />   
   </li>
   );
 };
-
-export default Dialog;

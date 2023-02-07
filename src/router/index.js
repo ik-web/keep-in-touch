@@ -3,6 +3,8 @@ import { createHashRouter, RouterProvider } from "react-router-dom";
 import {
   Auth,
   Home,
+  Messaging,
+  Network,
   Community,
   Profile,
   Error,
@@ -21,6 +23,14 @@ const router = createHashRouter([
   {
     path: "/home",
     element: <Home />,
+  },
+  {
+    path: "/messaging",
+    element: <Messaging />,
+  },
+  {
+    path: "/network",
+    element: <Network />,
   },
   {
     path: "/community",

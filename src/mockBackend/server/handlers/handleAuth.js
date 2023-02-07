@@ -1,4 +1,4 @@
-import users from "api/data/users";
+import users from "mockBackend/data/users";
 
 const getUserByLogin = (login) => {
   return users.find((user) => user.login === login);

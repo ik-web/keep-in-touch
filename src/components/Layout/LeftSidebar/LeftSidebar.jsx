@@ -6,9 +6,9 @@ import { SideFollow } from './SideFollow/SideFollow';
 
 export const LeftSidebar = () => {
   return (
-    <div className={classes.leftSidebar}>
+    <aside className={classes.leftSidebar}>
       <SideNav />
       <SideFollow />
-    </div>
+    </aside>
   );
 };

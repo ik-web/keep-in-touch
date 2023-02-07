@@ -1,36 +1,34 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import FollowingButton from '../../../shared/FollowingButton/FollowingButton';
-import MessageButton from '../../../shared/MessageButton/MessageButton';
-import OnlineStatus from '../../../components/OnlineStatus/OnlineStatus';
-import styles from './User.module.scss';
+import classes from './User.module.scss';
+import { OnlineStatus } from 'components';
 
-const User = ({
-  user,
-  onFollowingToggler,
-  isFollowing,
-  checkFollowingProcess
-}) => {
+import FollowingButton from 'shared/FollowingButton/FollowingButton';
+import MessageButton from 'shared/MessageButton/MessageButton';
 
+export const User = ({ user }) => {
+  const isFollowing = null;
+  const onFollowingToggler = null;
+  const checkFollowingProcess= null;
 
   return (
-    <li className={styles.user}>
+    <li className={classes.user}>
       <NavLink to={`/profile/${user.id}`}>
         <img
           src={user.avatar}
           alt="User avatar"
-          className={styles.user__avatar}
+          className={classes.user__avatar}
         />
       </NavLink>
 
-      <h4 className={styles.user__name}>
+      <h4 className={classes.user__name}>
         {user.name}
       </h4>
 
       <OnlineStatus onlineStatus={user.isOnline} />
 
-      <div className={styles.user__city}>
+      <div className={classes.user__city}>
         {user.city}
       </div>
 
@@ -44,5 +42,3 @@ const User = ({
     </li>
   );
 };
-
-export default User;

@@ -2,8 +2,8 @@ import classes from './RightSidebar.module.scss';
 
 export const RightSidebar = () => {
   return (
-    <div className={classes.rightSidebar}>
+    <aside className={classes.rightSidebar}>
 
-    </div>
+    </aside>
   );
 };

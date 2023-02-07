@@ -1,30 +1,38 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
-import ContactsContainer from './Contacts/ContactsContainer';
-import DialogsContainer from './Dialogs/DialogsContainer';
-import Preloader from '../../shared/Preloader/Preloader';
-import styles from './Messaging.module.scss';
-import WithNoData from '../../shared/WithNoData/WithNoData';
+import classes from './Messaging.module.scss';
+import { CustomTitle, Loader } from 'components/UI';
+import { Layout } from 'components';
+import { Contacts } from './Contacts/Contacts';
+import { Dialogs } from './Dialogs/Dialogs';
 
-const Messaging = ({ totalDialogs }) => {
+export const Messaging = () => {
+  const dispatch = useDispatch();
+  const totalDialogs = 0;
+  const loading = false;
+
+  useEffect(() => {
+    // dispatch(fetchDialogs());
+  }, []);
+
   return (
-    <>
-      {totalDialogs === null
-        ? <Preloader />
-
-        : <div  className={styles.messaging}>
+    <Layout>
+      {loading
+        ? <Loader />
+        : <div className={classes.messaging}>
             {totalDialogs > 0
-              ? <section className={styles.messaging__content}>
-                  <ContactsContainer />
-                  <DialogsContainer />            
+              ? <section className={classes.messaging__content}>
+                  <Contacts />
+                  <Dialogs />        
                 </section>
 
-              : <WithNoData message={"You don't have any dialogue..."} />
+              : <CustomTitle className={classes.messaging__withNoData}>
+                  You don't have any dialogue...
+                </CustomTitle>
             }
           </div>
       }
-    </>
+    </Layout>
   );
 };
-
-export default Messaging;

@@ -2,7 +2,6 @@
 @import "styles/utils/mixins";
 
 .header {
-  grid-area: header;
   background-color: $color-normal;
 
   @include xs {
@@ -14,10 +13,10 @@
     grid-template-columns: auto 1fr auto;
     align-items: center;
 
-    padding: 5px 16px;
+    padding: 5px 0;
 
     @include xs {
-      padding: 5px 12px;
+      padding: 5px 0;
     }
   }
 

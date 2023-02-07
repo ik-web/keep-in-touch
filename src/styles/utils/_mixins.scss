@@ -64,3 +64,10 @@
     color: $color-secondary;
   }
 }
+
+@mixin sidebar {
+  height: 100%;
+  padding: 36px 0;
+  background: $color-normal;
+  border-radius: $border-radius-block;
+}

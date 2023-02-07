@@ -1,34 +1,35 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import WithNoData from '../../../shared/WithNoData/WithNoData';
-import DialogContainer from './Dialog/DialogContainer';
-import styles from './Dialogs.module.scss';
+import classes from './Dialogs.module.scss';
+import { CustomTitle } from 'components/UI';
+import { Dialog } from './Dialog/Dialog';
 
-
-const Dialogs = ({
+export const Dialogs = ({
   dialogs,
   isContactSelected,
 }) => {
   return (
-    <ul className={styles.dialogs}>
+    <ul className={classes.dialogs}>
       {isContactSelected
       ? <Routes>
           {dialogs.map(dialog => (
             <Route
               path={`${dialog.id}`}
               key={dialog.id} 
-              element={ <DialogContainer dialog={dialog} /> }
+              element={ <Dialog dialog={dialog} /> }
             />
           ))}
         </Routes>
 
-      : <div className={styles.dialogs__hint}>
-          {dialogs.length && <WithNoData message={"Please select a contact"} />}
+      : <div className={classes.dialogs__hint}>
+          {dialogs.length && (
+            <CustomTitle>
+              You don't have any dialogue...
+            </CustomTitle>
+          )}
         </div>
       }
     </ul>
   );
 };
-
-export default Dialogs;

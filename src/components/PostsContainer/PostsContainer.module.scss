@@ -13,6 +13,10 @@
   border-radius: $border-radius-block;
   background: $color-very-light;
 
+  @include md {
+    padding: 24px 0;
+  }
+
   &_loading {
     justify-content: center;
   }

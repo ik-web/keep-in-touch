@@ -1,23 +1,25 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import WithNoData from '../../../shared/WithNoData/WithNoData';
-import Contact from './Contact/Contact';
-import styles from './Contacts.module.scss';
+import classes from './Contacts.module.scss';
+import { CustomTitle } from 'components/UI';
+import { Contact } from './Contact/Contact';
 
-const Contacts = ({
+export const Contacts = ({
   dialogs,
   isSelected,
   setIsContactSelected
 }) => {
   return (
     <ul className={classNames(
-      styles.contacts,
-      {[styles.turnOffContacts]: isSelected}
+      classes.contacts,
+      {[classes.turnOffContacts]: isSelected}
     )}>
       {!dialogs.length && 
-        <div className={styles.contacts__hint}>
-          <WithNoData message={"You don't have any dialogue..."} />
+        <div className={classes.contacts__hint}>
+          <CustomTitle>
+            You don't have any dialogue...
+          </CustomTitle>
         </div>
       }
 
@@ -31,5 +33,3 @@ const Contacts = ({
     </ul>
   );
 }
-
-export default Contacts;

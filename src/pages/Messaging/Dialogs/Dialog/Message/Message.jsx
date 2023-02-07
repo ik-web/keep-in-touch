@@ -2,31 +2,31 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 
-import styles from './Message.module.scss';
+import classes from './Message.module.scss';
 
-const Message = ({ message, authUser }) => {
+export const Message = ({ message, authUser }) => {
   const isAuthUser = message.authorId === authUser.id;
 
   return (
     <article className={
       classNames(
-        styles.message, 
-        {[styles.message_isAuthUser]: isAuthUser}
+        classes.message, 
+        {[classes.message_isAuthUser]: isAuthUser}
       )}
     >
       <NavLink to={`/profile/${message.authorId}`}>
         <img 
           src={message.authorAvatar} 
           alt='User avatar' 
-          className={styles.message__author}
+          className={classes.message__author}
         />
       </NavLink>
 
       <div 
         className={
           classNames(
-            styles.message__text,
-            {[styles.message__text_isAuthUser]: isAuthUser}
+            classes.message__text,
+            {[classes.message__text_isAuthUser]: isAuthUser}
         )}
       >
         {message.message}
@@ -34,5 +34,3 @@ const Message = ({ message, authUser }) => {
     </article>
   );
 };
-
-export default Message;

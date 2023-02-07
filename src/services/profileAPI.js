@@ -1,4 +1,4 @@
-import { server } from "api/mockServer";
+import { server } from "mockBackend/server";
 import { getUserKey } from "./utils";
 
 export const profileAPI = {

@@ -1,0 +1,60 @@
+@import 'styles/utils/vars';
+@import 'styles/utils/mixins';
+
+.content {
+  overflow: hidden;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 240px 1fr 240px;
+    grid-template-rows: 1fr;
+    gap: $page_indent;
+    grid-template-areas: 'leftSidebar main rightSidebar';
+
+    height: 100%;
+
+    @include lg {
+      grid-template-columns: 240px 1fr;
+      grid-template-rows: auto 1fr;
+      grid-template-areas:
+        'leftSidebar rightSidebar'
+        'leftSidebar main';
+    }
+
+    @include md {
+      grid-template-columns: 200px 1fr;
+    }
+
+    @include sm {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas:
+        'header'
+        'main'
+        'leftSidebar ';
+    }
+
+    @include xs {
+      gap: $page_indent_mobile;
+    }
+  }
+
+  &__leftSidebar {
+    grid-area: leftSidebar;
+  }
+
+  &__main {
+    grid-area: main;
+    display: grid;
+    border-radius: $border-radius-block;
+    overflow-y: scroll;
+  }
+
+  &__rightSidebar {
+    grid-area: rightSidebar;
+
+    @include sm {
+      display: none;
+    }
+  }
+}

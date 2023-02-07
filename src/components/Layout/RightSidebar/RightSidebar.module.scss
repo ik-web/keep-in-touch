@@ -2,20 +2,9 @@
 @import 'styles/utils/mixins';
 
 .rightSidebar {
-  grid-area: rightSidebar;
-  margin-right: 16px;
-  padding: 35px 0;
-
-  text-align: center;
-
-  background: $color-normal;
-  border-radius: $border-radius-block;
+  @include sidebar;
   
   @include xl {
     padding: 12px 16px;
-  }
-  
-  @include md {
-    display: none;
   }
 }

@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./MessageForm.module.scss";
 
-const MessageForm = ({
+export const MessageForm = ({
   messageText,
   onHandleChange,
   onHundleSubmit
@@ -27,5 +27,3 @@ const MessageForm = ({
     </form>
   );
 };
-
-export default MessageForm;

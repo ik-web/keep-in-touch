@@ -1,10 +1,10 @@
-import classes from "./AuthHint.module.scss";
+import classes from './AuthHint.module.scss';
 
 export const AuthHint = () => {
   return (
     <div className={classes.authHint}>
       <p>
-        Enter from <b>1</b> to <b>50</b> to field <b>"login"</b>
+        Enter from <b>"1"</b> to <b>"50"</b> to field <b>"login"</b>
       </p>
 
       <p>

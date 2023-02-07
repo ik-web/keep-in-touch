@@ -2,22 +2,20 @@ import React from "react";
 import classNames from "classnames";
 import { NavLink } from "react-router-dom";
 
-import SmallUserAvatar from "../../../../shared/SmallUserAvatar/SmallUserAvatar";
-import styles from "./Contact.module.scss";
+import classes from "./Contact.module.scss";
+import { SmallAvatar } from "components/UI";
 
-const Contact = ({ dialog, setIsContactSelected }) => {
+export const Contact = ({ dialog, setIsContactSelected }) => {
   return (
     <NavLink
       to={`${dialog.id}`}
       onClick={setIsContactSelected}
       className={({ isActive }) =>
-      classNames(styles.contact, { [styles.contact_active]: isActive })
+      classNames(classes.contact, { [classes.contact_active]: isActive })
     }
     > 
-      <SmallUserAvatar src={dialog.contactAvatar} />
+      <SmallAvatar src={dialog.contactAvatar} />
       {dialog.contact}
     </NavLink>
   );
 };
-
-export default Contact;

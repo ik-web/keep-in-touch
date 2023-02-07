@@ -21,9 +21,10 @@ export const CustomMenu = ({
   itemNameStyles,
 }) => {
   const overlay = useRef();
+  const menuInner = useRef();
 
   const hundleClose = (e) => {
-    if (e.target === overlay.current) {
+    if (e.target === overlay.current || e.target === menuInner.current) {
       onClose(false);
     }
   };
@@ -38,21 +39,27 @@ export const CustomMenu = ({
       </CustomButton>
 
       <div
-        id="ov"
+        id="overlay"
         ref={overlay}
         onClick={hundleClose}
         className={classNames(`${classes.menu__overlay} ${menuOverlayStyles}`, {
           [classes.menu_isOpen]: open,
         })}
       >
-        <MenuList
-          items={items}
-          listStyles={listStyles}
-          itemStyles={itemStyles}
-          itemIconStyles={itemIconStyles}
-          itemNameStyles={itemNameStyles}
-          itemButtonStyles={itemButtonStyles}
-        />
+        <div
+          className="pageContainer"
+          onClick={hundleClose}
+          ref={menuInner}
+        >
+          <MenuList
+            items={items}
+            listStyles={listStyles}
+            itemStyles={itemStyles}
+            itemIconStyles={itemIconStyles}
+            itemNameStyles={itemNameStyles}
+            itemButtonStyles={itemButtonStyles}
+          />
+        </div>
       </div>
     </div>
   );
