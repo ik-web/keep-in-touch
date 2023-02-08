@@ -25,7 +25,7 @@ const router = createHashRouter([
     element: <Home />,
   },
   {
-    path: "/messaging",
+    path: "/messaging/:dialogId?",
     element: <Messaging />,
   },
   {
@@ -37,7 +37,7 @@ const router = createHashRouter([
     element: <Community />,
   },
   {
-    path: "/profile/:profileId",
+    path: "/profile/:profileId?",
     element: <Profile />,
   },
 ]);

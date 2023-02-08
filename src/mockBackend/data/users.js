@@ -7,7 +7,7 @@ const users = [
     avatar: "https://bit.ly/3TefAYr",
     city: "Dalaran",
     status: "",
-    wallpaper: "https://bit.ly/3TuCv1h",
+    wallpaper: "https://bit.ly/40DYZkN",
     about: `Let's imagine that there should be information about this user, but since this is a test description of the character, there is only this simple text.`,
   },
   {
@@ -18,7 +18,7 @@ const users = [
     avatar: "https://bit.ly/3yUfEnR",
     city: "Los Angeles",
     status: "this is character's test status",
-    wallpaper: "https://bit.ly/3D97FG9",
+    wallpaper: "https://bit.ly/3DTXOnE",
     about: `Let's imagine that there should be information about this user, but since this is a test description of the character, there is only this simple text.`,
   },
   {
@@ -40,7 +40,7 @@ const users = [
     avatar: "https://bit.ly/3Tv9DG3",
     city: "Los Angeles",
     status: "this is character's test status",
-    wallpaper: "https://bit.ly/3ETT9mT",
+    wallpaper: "https://bit.ly/3Ywy8VS",
     about: `Let's imagine that there should be information about this user, but since this is a test description of the character, there is only this simple text.`,
   },
   {
@@ -51,7 +51,7 @@ const users = [
     avatar: "https://bit.ly/3eAJZjY",
     city: "New York",
     status: "this is character's test status",
-    wallpaper: "https://bit.ly/3SbTSmy",
+    wallpaper: "https://bit.ly/3HLWAf4",
     about: `Let's imagine that there should be information about this user, but since this is a test description of the character, there is only this simple text.`,
   },
   {
@@ -62,7 +62,7 @@ const users = [
     avatar: "https://bit.ly/3D679IX",
     city: "Gotham",
     status: "this is character's test status",
-    wallpaper: "https://bit.ly/3eICOH4",
+    wallpaper: "https://bit.ly/3XeLMfl",
     about: `Let's imagine that there should be information about this user, but since this is a test description of the character, there is only this simple text.`,
   },
   {
@@ -73,7 +73,7 @@ const users = [
     avatar: "https://bit.ly/3SQEqgj",
     city: "New York",
     status: "this is character's test status",
-    wallpaper: "https://bit.ly/3yTi06p",
+    wallpaper: "https://bit.ly/3ldXNUR",
     about: `Let's imagine that there should be information about this user, but since this is a test description of the character, there is only this simple text.`,
   },
   {
@@ -84,7 +84,7 @@ const users = [
     avatar: "https://bit.ly/3CiSEjt",
     city: "Gotham",
     status: "this is character's test status",
-    wallpaper: "https://bit.ly/3MG7jtN",
+    wallpaper: "https://bit.ly/3RIJ80c",
     about: `Let's imagine that there should be information about this user, but since this is a test description of the character, there is only this simple text.`,
   },
   {
@@ -95,7 +95,7 @@ const users = [
     avatar: "https://bit.ly/3S0izm7",
     city: "New York",
     status: "this is character's test status",
-    wallpaper: "https://bit.ly/3s7nhne",
+    wallpaper: "https://bit.ly/40CWAa3",
     about: `Let's imagine that there should be information about this user, but since this is a test description of the character, there is only this simple text.`,
   },
   {
@@ -106,7 +106,7 @@ const users = [
     avatar: "https://bit.ly/3S4ARSQ",
     city: "Toronto",
     status: "this is character's test status",
-    wallpaper: "https://bit.ly/3gfmr58",
+    wallpaper: "https://bit.ly/3jM9KAL",
     about: `Let's imagine that there should be information about this user, but since this is a test description of the character, there is only this simple text.`,
   },
   {
@@ -117,7 +117,7 @@ const users = [
     avatar: "https://bit.ly/3VgbNLE",
     city: "New York",
     status: "",
-    wallpaper: "https://bit.ly/3s498Ht",
+    wallpaper: "https://bit.ly/3DQYz0w",
     about: `Let's imagine that there should be information about this user, but since this is a test description of the character, there is only this simple text.`,
   },
   {
@@ -128,7 +128,7 @@ const users = [
     avatar: "https://bit.ly/3yBHeWH",
     city: "Miami",
     status: "this is character's test status",
-    wallpaper: "https://bit.ly/3ESTYMB",
+    wallpaper: "https://bit.ly/40HfdJI",
     about: `Let's imagine that there should be information about this user, but since this is a test description of the character, there is only this simple text.`,
   },
   {
@@ -139,7 +139,7 @@ const users = [
     avatar: "https://bit.ly/3DkRdCV",
     city: "Dalaran",
     status: "this is character's test status",
-    wallpaper: "https://bit.ly/3g7FvSH",
+    wallpaper: "https://bit.ly/3JOj7L5",
     about: `Let's imagine that there should be information about this user, but since this is a test description of the character, there is only this simple text.`,
   },
   {
@@ -356,10 +356,10 @@ const users = [
     login: "33",
     password: "111",
     name: "Batman",
-    avatar: "https://bit.ly/3TymbMV",
+    avatar: "https://bit.ly/3RQHzxh",
     city: "Gotham",
     status: "this is character's test status",
-    wallpaper: "https://bit.ly/3SbTSmy",
+    wallpaper: "https://bit.ly/3HK7ulB",
     about: `Let's imagine that there should be information about this user, but since this is a test description of the character, there is only this simple text.`,
   },
   {
@@ -469,7 +469,7 @@ const users = [
     avatar: "https://bit.ly/3eGgoGl",
     city: "Los Angeles",
     status: "this is character's test status",
-    wallpaper: "https://bit.ly/3MJ5Gvt",
+    wallpaper: "https://bit.ly/3x8Tgpq",
     about: `Let's imagine that there should be information about this user, but since this is a test description of the character, there is only this simple text.`,
   },
   {
@@ -480,7 +480,7 @@ const users = [
     avatar: "https://bit.ly/3VCfb3p",
     city: "Dalaran",
     status: "this is character's test status",
-    wallpaper: "https://bit.ly/3MFfeaN",
+    wallpaper: "https://bit.ly/3RL50YN",
     about: `Let's imagine that there should be information about this user, but since this is a test description of the character, there is only this simple text.`,
   },
   {

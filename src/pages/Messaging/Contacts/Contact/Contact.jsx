@@ -1,21 +1,33 @@
-import React from "react";
-import classNames from "classnames";
-import { NavLink } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import classNames from 'classnames';
+import { NavLink } from 'react-router-dom';
 
-import classes from "./Contact.module.scss";
-import { SmallAvatar } from "components/UI";
+import { useDialogSelector } from 'store/selectors';
 
-export const Contact = ({ dialog, setIsContactSelected }) => {
+import classes from './Contact.module.scss';
+import { SmallAvatar } from 'components/UI';
+
+export const Contact = ({ contact }) => {
+  const { selectedDialogId } = useDialogSelector();
+  const [isSelected, setIsSelected] = useState(false);
+  const dialogId = contact.dialogId;
+
+  useEffect(() => {
+    if (dialogId === +selectedDialogId) {
+      setIsSelected(true);
+    } else if (isSelected) {
+      setIsSelected(false);
+    }
+  }, [selectedDialogId]);
+
   return (
     <NavLink
-      to={`${dialog.id}`}
-      onClick={setIsContactSelected}
-      className={({ isActive }) =>
-      classNames(classes.contact, { [classes.contact_active]: isActive })
-    }
-    > 
-      <SmallAvatar src={dialog.contactAvatar} />
-      {dialog.contact}
+      to={`/messaging/${dialogId}`}
+      className={classNames(classes.contact, { [classes.contact_active]: isSelected })}
+    >
+      <SmallAvatar src={contact.contactAvatar} styles={classes.contact__avatar} />
+      {contact.contactName}
+      <div className={classes.contact__arrow}></div>
     </NavLink>
   );
 };

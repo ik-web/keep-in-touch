@@ -5,7 +5,7 @@
   display: flex;
   margin-bottom: 15px;
   padding: 10px;
-  max-width: 60%;
+  max-width: 70%;
   width: max-content;
 
   background: $color-very-light;
@@ -14,24 +14,18 @@
   word-break: break-word;
 
   @include xl {
-    max-width: 70%;
-  }
-  
-  @include xs {
     max-width: 85%;
   }
 
   &_isAuthUser {
+    align-self: end;
     flex-direction: row-reverse;
     justify-content: space-between;
-    align-self: end;
     background-color: $color-extra-light;
   }
 
   &__author {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    border-color: $color-normal;
   }
 
   &__text {

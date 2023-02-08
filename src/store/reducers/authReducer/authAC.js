@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import { authAPI } from "services/authAPI";
+import { authAPI } from "services";
 import { userInStorage } from "store/utils";
 
 export const fetchAuth = createAsyncThunk(

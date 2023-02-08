@@ -4,7 +4,7 @@
 .leftSidebar {
   @include sidebar;
 
-  @include sm {
+  @include md {
     top: 0;
     order: 2;
 

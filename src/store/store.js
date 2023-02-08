@@ -7,6 +7,8 @@ import {
   postReducer,
   profilePostReducer,
   profileReducer,
+  contactReducer,
+  dialogReducer,
 } from "./reducers";
 
 const rootReducer = combineReducers({
@@ -16,6 +18,8 @@ const rootReducer = combineReducers({
   profile: profileReducer,
   profilePosts: profilePostReducer,
   onlineStatus: onlineStatusReducer,
+  contact: contactReducer,
+  dialog: dialogReducer,
 });
 
 export const setupStore = () => {

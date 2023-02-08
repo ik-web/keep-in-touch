@@ -2,11 +2,12 @@
 @import 'styles/utils/mixins';
 
 .contact {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  justify-items: start;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 
-  width: 250px;
   height: 60px;
   margin: 1px 1px 10px 1px;
   padding: 0 10px;
@@ -20,9 +21,7 @@
   transition: all $transition-behavior;
 
   @include sm {
-    width: 100%;
     margin: 0;
-
     text-transform: uppercase;
     text-align: center;
   }
@@ -38,10 +37,45 @@
   &:focus,
   &:hover,
   &_active {
-    background-color: $color-light;
+    background-color: $color-dark;
+    color: $color-secondary;
+  }
+  
+  &_active {
+    border: 2px solid $color-light;
   }
 
-  &_active {
-    border: 2px solid $color-dark;
+  &:focus &__avatar,
+  &:hover &__avatar,
+  &_active &__avatar {
+    border-color: $color-normal;
+  }
+
+  &__arrow {
+    justify-self: end;
+
+    width: 0; 
+    height: 0;
+
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 18px solid $color-light;
+
+    opacity: 0;
+    transition: opasity $transition-behavior;
+
+    @include md {
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-left: 16px solid $color-light;
+    }
+
+    @include sm {
+      display: none;
+    }
+  }
+
+  &_active &__arrow {
+    opacity: 1;
   }
 }

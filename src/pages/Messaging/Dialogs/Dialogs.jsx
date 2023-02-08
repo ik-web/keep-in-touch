@@ -5,10 +5,10 @@ import classes from './Dialogs.module.scss';
 import { CustomTitle } from 'components/UI';
 import { Dialog } from './Dialog/Dialog';
 
-export const Dialogs = ({
-  dialogs,
-  isContactSelected,
-}) => {
+export const Dialogs = () => {
+  const isContactSelected = false;
+  const dialogs = [];
+
   return (
     <ul className={classes.dialogs}>
       {isContactSelected
@@ -23,9 +23,9 @@ export const Dialogs = ({
         </Routes>
 
       : <div className={classes.dialogs__hint}>
-          {dialogs.length && (
+          {dialogs && (
             <CustomTitle>
-              You don't have any dialogue...
+              No contact selected...
             </CustomTitle>
           )}
         </div>

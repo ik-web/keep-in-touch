@@ -22,7 +22,12 @@
     }
 
     @include md {
-      grid-template-columns: 200px 1fr;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas:
+      'header'
+      'main'
+      'leftSidebar ';
     }
 
     @include sm {
@@ -46,14 +51,19 @@
   &__main {
     grid-area: main;
     display: grid;
+
     border-radius: $border-radius-block;
     overflow-y: scroll;
+
+    @include sm {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__rightSidebar {
     grid-area: rightSidebar;
 
-    @include sm {
+    @include md {
       display: none;
     }
   }

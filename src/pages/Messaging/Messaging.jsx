@@ -1,38 +1,84 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import classNames from 'classnames';
+
+import { fetchContacts, fetchDialog, setSelectedDialogId } from 'store/reducers';
+import { useContactSelector, useDialogSelector } from 'store/selectors';
 
 import classes from './Messaging.module.scss';
 import { CustomTitle, Loader } from 'components/UI';
 import { Layout } from 'components';
 import { Contacts } from './Contacts/Contacts';
-import { Dialogs } from './Dialogs/Dialogs';
+import { Dialog } from './Dialog/Dialog';
 
 export const Messaging = () => {
   const dispatch = useDispatch();
-  const totalDialogs = 0;
-  const loading = false;
+  const { contactsLoading } = useContactSelector();
+  const { dialogId } = useParams();
+  
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, []);
 
   useEffect(() => {
-    // dispatch(fetchDialogs());
-  }, []);
+    dispatch(setSelectedDialogId(dialogId || null));
+
+    if (dialogId) {
+      dispatch(fetchDialog(dialogId));
+    }
+  }, [dialogId]);
 
   return (
     <Layout>
-      {loading
+      {contactsLoading
         ? <Loader />
-        : <div className={classes.messaging}>
-            {totalDialogs > 0
-              ? <section className={classes.messaging__content}>
-                  <Contacts />
-                  <Dialogs />        
-                </section>
-
-              : <CustomTitle className={classes.messaging__withNoData}>
-                  You don't have any dialogue...
-                </CustomTitle>
-            }
-          </div>
+        : <MessagingContent />
       }
     </Layout>
+  );
+};
+
+const MessagingContent = () => {
+  const { totalContacts } = useContactSelector();
+  const availableContacts = totalContacts > 0;
+
+  return (
+    <div className={classes.messaging}>
+      {availableContacts
+        ? <DialogsContent />
+        : <CustomTitle 
+            className={classNames(
+              '',
+              {[classes.messaging__hint]: !availableContacts}
+            )}
+          >
+            You don't have any dialogue...
+          </CustomTitle>
+      }
+    </div>
+  );
+};
+
+
+const DialogsContent = () => {
+  const { selectedDialogId: dialogId } = useDialogSelector();
+
+  return (
+    <section className={classes.messaging__content}>
+      <div className={classNames(
+        classes.messaging__contacts,
+        {[classes.messaging__contacts_turnOff]: dialogId}
+      )}>
+        <Contacts />
+      </div>
+
+      {dialogId 
+        ? <Dialog />
+        : <CustomTitle className={classes.messaging__dialogHint}>
+            No contact selected...
+          </CustomTitle>
+      }
+    </section>
   );
 };

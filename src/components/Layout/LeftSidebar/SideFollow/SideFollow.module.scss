@@ -4,7 +4,7 @@
 .sideFollow {
   margin-top: 60px;
 
-  @include sm {
+  @include md {
     display: none;
   }
 

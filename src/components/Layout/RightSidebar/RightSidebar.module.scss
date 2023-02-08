@@ -3,8 +3,4 @@
 
 .rightSidebar {
   @include sidebar;
-  
-  @include xl {
-    padding: 12px 16px;
-  }
 }

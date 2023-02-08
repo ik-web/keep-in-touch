@@ -23,12 +23,13 @@ export const Profile = () => {
   const { loading } = useProfileSelector();
   const { user } = useAuthSelector();
   const { profileId } = useParams();
-  const isUserProfile = user.id === +profileId;
+  const handledProfileId = profileId ? profileId : user.id;
+  const isUserProfile = !profileId;
 
   useEffect(() => {
-    dispatch(fetchProfile(profileId));
-    dispatch(fetchProfilePosts(profileId));
-    dispatch(fetchOnlineStatus(profileId));
+    dispatch(fetchProfile(handledProfileId));
+    dispatch(fetchProfilePosts(handledProfileId));
+    dispatch(fetchOnlineStatus(handledProfileId));
     dispatch(setIsUserProfile(isUserProfile));
   }, [profileId]);
 

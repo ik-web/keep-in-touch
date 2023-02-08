@@ -1,5 +1,5 @@
 import { handleAuth } from "../handlers/handleAuth";
-import { postNewMessage } from "../handlers/handleDialogs";
+import { postNewMessage } from "../handlers/handleDialog";
 import { postFollow } from "../handlers/handleFollow";
 import { postNewPost } from "../handlers/handlePosts";
 

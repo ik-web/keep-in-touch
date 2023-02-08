@@ -7,6 +7,7 @@ const initialState = {
   totalPosts: 0,
   postsLoading: false,
   postsError: "",
+
   newPostSending: false,
   newPostError: "",
 };

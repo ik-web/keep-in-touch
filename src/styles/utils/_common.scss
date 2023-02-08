@@ -1,0 +1,65 @@
+html {
+  font-family: $font-family-text;
+  font-size: $font-size-normal;
+  line-height: 1.2;
+  color: $color-main;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: url('../../assets/img/body_bg.webp') center / cover no-repeat;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $color-extra-normal;
+  border-radius: 20px;
+}
+
+:-webkit-any(article, aside, nav, section) h1 {
+  font-size: 2em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-title;
+  font-weight: 400;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  color: $color-main;
+}
+
+button {
+  font-size: $font-size-normal;
+}
+
+.pageContainer {
+  position: relative;
+  max-width: 1400px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 $page_indent;
+
+  @include xs {
+    padding: 0 $page_indent_mobile;
+  }
+}

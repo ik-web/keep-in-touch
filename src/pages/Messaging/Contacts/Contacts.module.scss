@@ -3,11 +3,6 @@
 
 .contacts {
 
-  padding-right: 15px;
-  border-right: 3px solid $color-normal;
-
-  overflow-y: scroll;
-
   @include sm {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -20,7 +15,8 @@
     
   @include xs {
     display: block;
-    width: 300px;
+    max-width: 300px;
+    width: 100%;
     margin: 0 auto;
     padding: 0;
   }
@@ -31,16 +27,5 @@
     @include sm {
       display: block;
     }
-  }
-}
-
-.turnOffContacts {
-
-  @include sm {
-    display: none;
-  }
-
-  @include xs {
-    display: none;
   }
 }

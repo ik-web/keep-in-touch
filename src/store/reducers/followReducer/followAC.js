@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import { followAPI } from "services/followAPI";
+import { followAPI } from "services";
 
 export const fetchFollow = createAsyncThunk(
   "follow/fetchFollow",

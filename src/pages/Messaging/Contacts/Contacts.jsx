@@ -1,33 +1,25 @@
 import React from 'react';
 import classNames from 'classnames';
 
+import { useContactSelector } from 'store/selectors';
+
 import classes from './Contacts.module.scss';
-import { CustomTitle } from 'components/UI';
 import { Contact } from './Contact/Contact';
 
-export const Contacts = ({
-  dialogs,
-  isSelected,
-  setIsContactSelected
-}) => {
+export const Contacts = () => {
+  const { contacts } = useContactSelector();
+
+  const isSelected = null;
+
   return (
     <ul className={classNames(
       classes.contacts,
       {[classes.turnOffContacts]: isSelected}
     )}>
-      {!dialogs.length && 
-        <div className={classes.contacts__hint}>
-          <CustomTitle>
-            You don't have any dialogue...
-          </CustomTitle>
-        </div>
-      }
-
-      {dialogs.map(dialog => (
+      {contacts.map(contact => (
         <Contact
-          key={dialog.id}
-          dialog={dialog}
-          setIsContactSelected={setIsContactSelected}
+          key={contact.dialogId}
+          contact={contact}
         />
       ))}
     </ul>

@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { profileAPI } from "services/profileAPI";
+
+import { profileAPI } from "services";
 
 export const fetchOnlineStatus = createAsyncThunk(
   "onlineStatus/fetchOnlineStatus",

@@ -7,7 +7,7 @@
   gap: $page_indent;
   height: 100vh;
 
-  @include sm {
+  @include md {
     gap: 0;
   }
 }
