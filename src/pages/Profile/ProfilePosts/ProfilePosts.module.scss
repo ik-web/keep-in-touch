@@ -1,5 +1,9 @@
+@import "styles/utils/vars";
+@import "styles/utils/mixins";
+
 .posts {
   height: 100%;
+  border-radius: 0 0 $border-radius-block $border-radius-block; 
 
   &_loading {
     justify-content: center;

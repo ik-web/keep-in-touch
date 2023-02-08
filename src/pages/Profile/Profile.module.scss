@@ -5,6 +5,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  background: $color-secondary;
 
   &__info {
     padding: 16px 0 60px;
@@ -16,13 +17,11 @@
     justify-content: center;
   }
 
-  &__postCreating,
-  &__posts {
-    margin-top: 40px;
+  &__postCreating {
+    padding: 40px 0 60px;
   }
 
   &__posts {
     flex-grow: 1;
-    margin-top: 40px;
   }
 }

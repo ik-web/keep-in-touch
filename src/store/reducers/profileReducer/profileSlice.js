@@ -1,17 +1,19 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
-import { fetchProfile, putProfileStatus } from "./profileAC";
+import { fetchProfile, putProfileStatus } from './profileAC';
 
 const initialState = {
   profile: {},
-  loading: false,
-  error: "",
+  profileLoading: false,
+  profileError: '',
+
   isUserProfile: false,
   statusSending: false,
+  statusError: '',
 };
 
 export const profileSlice = createSlice({
-  name: "profile",
+  name: 'profile',
   initialState,
   reducers: {
     setIsUserProfile(state, action) {
@@ -20,18 +22,18 @@ export const profileSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchProfile.pending, (state) => {
-      state.loading = true;
+      state.profileLoading = true;
     });
 
     builder.addCase(fetchProfile.fulfilled, (state, action) => {
-      state.loading = false;
+      state.profileLoading = false;
       state.profile = action.payload;
-      state.error = "";
+      state.profileError = '';
     });
 
     builder.addCase(fetchProfile.rejected, (state, action) => {
-      state.loading = false;
-      state.error = action.payload;
+      state.profileLoading = false;
+      state.profileError = action.payload;
     });
 
     builder.addCase(putProfileStatus.pending, (state) => {
@@ -40,13 +42,12 @@ export const profileSlice = createSlice({
 
     builder.addCase(putProfileStatus.fulfilled, (state, action) => {
       state.statusSending = false;
+      state.statusError = ''
       state.profile.status = action.payload;
     });
   },
 });
 
-export const {
-  setIsUserProfile
-} = profileSlice.actions;
+export const { setIsUserProfile } = profileSlice.actions;
 
 export const profileReducer = profileSlice.reducer;
