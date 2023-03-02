@@ -51,17 +51,15 @@ and Redux, Flux architecture, data interaction, etc.
 >- The page that appears in the event of a page request error.
 
  **Added changes:**
- - Added simple validation to Auth page
- - Added selectors to store
- - Added error 404 page
- - Changed Music page to Community page
+ - Migrated from redux to redux toolkit
  - Changed some styles
  - Fixed some small bugs
 
  **Frameworks / libs dokumentation:** <br>
 - [Getting Started with React](https://reactjs.org/docs/getting-started.html) <br>
-- [Getting Started with Redux](https://redux.js.org/introduction/getting-started)
 - [Quick Start REACT ROUTER](https://v5.reactrouter.com/web/example/basic)
+- [Getting Started with Redux](https://redux.js.org/introduction/getting-started)
+- [Getting Started with Redux Toolkit](https://redux-toolkit.js.org/introduction/getting-started)
 - [REACT FINAL FORM](https://final-form.org/docs/react-final-form/getting-started)
 
  **The frameworks/libraries/modules used in the project**
@@ -71,6 +69,7 @@ and Redux, Flux architecture, data interaction, etc.
 - Redux `npm i redux`
 - Redux thunk `npm i redux-thunk`
 - Redux devtools `npm i redux-devtools-extension`
+- Redux toolkit `npm i @reduxjs/toolkit`
 - ClassNames `npm i classnames`
 - SaSS/SCSS `npm i sass`
 - REACT FINAL FORM `npm i --save final-form react-final-form`
