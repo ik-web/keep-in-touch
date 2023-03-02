@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/keep-in-touch/static/css/main.e8e0a35e.css",
-    "main.js": "/keep-in-touch/static/js/main.fd70462f.js",
+    "main.css": "/keep-in-touch/static/css/main.9389bf3e.css",
+    "main.js": "/keep-in-touch/static/js/main.efe6b3f8.js",
     "static/media/community.png": "/keep-in-touch/static/media/community.956937ffcbe0722c843a.png",
     "static/media/network.ico": "/keep-in-touch/static/media/network.f5bdbf8ce74642ae2431.ico",
     "static/media/profile.ico": "/keep-in-touch/static/media/profile.260815d242fba9cdd2b7.ico",
     "static/media/dialogs.ico": "/keep-in-touch/static/media/dialogs.13af134c42e092be5c6b.ico",
     "static/media/like.ico": "/keep-in-touch/static/media/like.0a3fcd46ec0ef2801fc6.ico",
     "static/media/logo.png": "/keep-in-touch/static/media/logo.0f91c10830df5a1845bd.png",
+    "static/media/body_bg.webp": "/keep-in-touch/static/media/body_bg.ba18624ae91f86f83dfd.webp",
     "static/media/spinner.svg": "/keep-in-touch/static/media/spinner.8d8c1da9d8b66703cb3daeca9a52f070.svg",
     "index.html": "/keep-in-touch/index.html",
-    "main.e8e0a35e.css.map": "/keep-in-touch/static/css/main.e8e0a35e.css.map",
-    "main.fd70462f.js.map": "/keep-in-touch/static/js/main.fd70462f.js.map"
+    "main.9389bf3e.css.map": "/keep-in-touch/static/css/main.9389bf3e.css.map",
+    "main.efe6b3f8.js.map": "/keep-in-touch/static/js/main.efe6b3f8.js.map"
   },
   "entrypoints": [
-    "static/css/main.e8e0a35e.css",
-    "static/js/main.fd70462f.js"
+    "static/css/main.9389bf3e.css",
+    "static/js/main.efe6b3f8.js"
   ]
 }
