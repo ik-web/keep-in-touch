@@ -23,7 +23,9 @@ export const Home = () => {
           ? <Loader />
           : posts.length
             ? <PostList posts={posts} />
-            : <CustomTitle>There are no posts...</CustomTitle>
+            : <div className={classes.home__message}>
+                <CustomTitle>There are no posts...</CustomTitle>
+              </div>
         }
       </PostsContainer>
     </Layout>

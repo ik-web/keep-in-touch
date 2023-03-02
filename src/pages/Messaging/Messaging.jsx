@@ -47,12 +47,7 @@ const MessagingContent = () => {
     <div className={classes.messaging}>
       {availableContacts
         ? <DialogsContent />
-        : <CustomTitle 
-            className={classNames(
-              '',
-              {[classes.messaging__hint]: !availableContacts}
-            )}
-          >
+        : <CustomTitle className={classes.messaging__hint}>
             You don't have any dialogue...
           </CustomTitle>
       }
@@ -73,12 +68,17 @@ const DialogsContent = () => {
         <Contacts />
       </div>
 
-      {dialogId 
-        ? <Dialog />
-        : <CustomTitle className={classes.messaging__dialogHint}>
-            No contact selected...
-          </CustomTitle>
-      }
+      <div className={classes.messaging__divider}></div>
+
+      <div className={classes.messaging__dialog}>
+        {dialogId
+          ? <Dialog />
+          : <CustomTitle className={classes.messaging__dialogHint}>
+              No contact selected...
+            </CustomTitle>
+        }
+      </div>
+
     </section>
   );
 };

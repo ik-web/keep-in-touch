@@ -10,17 +10,6 @@
   position: sticky;
   bottom: 0;
 
-  &:after {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    background: $color-secondary;
-  }
-
   @include sm {
     grid-template-columns: 3fr 1fr;
     margin-bottom: 15px;

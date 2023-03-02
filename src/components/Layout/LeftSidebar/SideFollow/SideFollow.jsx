@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 import { useFollowSelector } from "store/selectors";
-import { fetchFollow } from "store/reducers/followReducer";
+import { clearFollowItems, fetchFollowItems } from "store/reducers";
 
 import classes from "./SideFollow.module.scss";
 import { CustomTitle } from "components/UI";
@@ -10,14 +10,18 @@ import { LinkProfileAvatar } from "components";
 
 export const SideFollow = () => {
   const dispatch = useDispatch();
-  const { follow } = useFollowSelector();
-  const sideFollow = follow.slice(0, 3);
+  const { followItems } = useFollowSelector();
+  const sideFollowItems = followItems.slice(0, 3);
 
   useEffect(() => {
-    dispatch(fetchFollow());
+    dispatch(fetchFollowItems());
+
+    return () => {
+      dispatch(clearFollowItems());
+    }
   }, []);
 
-  if (!follow.length) {
+  if (!followItems.length) {
     return null;
   }
 
@@ -26,7 +30,7 @@ export const SideFollow = () => {
       <CustomTitle tag="h4">Following:</CustomTitle>
 
       <ul className={classes.sideFollow__list}>
-        {sideFollow.map((followItem) => (
+        {sideFollowItems.map((followItem) => (
           <li key={followItem.id}>
             <LinkProfileAvatar
               src={followItem.avatar}

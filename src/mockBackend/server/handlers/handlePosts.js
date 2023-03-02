@@ -1,5 +1,5 @@
-import users from '../../data/users';
-import posts from '../../data/posts';
+import userData from '../../data/userData';
+import postData from '../../data/postData';
 import { handleDataPage } from './handleDataPage';
 import { updateOnlineStatus } from './handleOnlineStatus';
 
@@ -15,9 +15,9 @@ export const handlePost = (post, users) => ({
 export const getPosts = (userId, page = 1, length = 15) => {
   updateOnlineStatus(userId);
 
-  const postsPage = handleDataPage(posts, page, length);
+  const postsPage = handleDataPage(postData, page, length);
   postsPage.items = postsPage.items
-    .map((post) => handlePost(post, users));
+    .map((post) => handlePost(post, userData));
 
   return {
     data: postsPage,
@@ -28,9 +28,9 @@ export const getPosts = (userId, page = 1, length = 15) => {
 export const getProfilePosts = (userId, profileId, length = 6) => {
   updateOnlineStatus(userId);
 
-  const profilePosts = posts
+  const profilePosts = postData
     .filter((post) => post.userId === +profileId)
-    .map((post) => handlePost(post, users));
+    .map((post) => handlePost(post, userData));
 
   return {
     data: handleDataPage(profilePosts, 1, length),
@@ -41,7 +41,7 @@ export const getProfilePosts = (userId, profileId, length = 6) => {
 export const postNewPost = (userId, body) => {
   updateOnlineStatus(userId);
   const { text } = body;
-  const newPostId = posts.length ? posts[posts.length - 1].id + 1 : 1;
+  const newPostId = postData.length ? postData[postData.length - 1].id + 1 : 1;
   const newPost = {
     id: newPostId,
     userId,
@@ -49,13 +49,13 @@ export const postNewPost = (userId, body) => {
     likes: 0,
   };
 
-  posts.push(newPost);
+  postData.push(newPost);
 
   const getNewPostFromData = () => {
-    return posts.find(post => post.id === newPostId);
+    return postData.find(post => post.id === newPostId);
   };
   
-  const data = handlePost(getNewPostFromData(), users);
+  const data = handlePost(getNewPostFromData(), userData);
 
   return { statusCode: 200, data };
 };

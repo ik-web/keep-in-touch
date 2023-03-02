@@ -1,4 +1,4 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 import {
   authReducer,
@@ -9,7 +9,8 @@ import {
   profileReducer,
   contactReducer,
   dialogReducer,
-} from "./reducers";
+  userReducer,
+} from './reducers';
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
   onlineStatus: onlineStatusReducer,
   contact: contactReducer,
   dialog: dialogReducer,
+  user: userReducer,
 });
 
 export const setupStore = () => {

@@ -1,4 +1,4 @@
-import dialogs from '../../data/dialogs';
+import dialogData from '../../data/dialogData';
 import { handleDataPage } from './handleDataPage';
 import { updateOnlineStatus } from './handleOnlineStatus';
 import { getUser } from './handleUsers';
@@ -12,7 +12,7 @@ const handleMessage = (message) => ({
 export const getDialog = (userId, dialogId, length = 20) => {
   updateOnlineStatus(userId);
 
-  const dialog = dialogs.find((d) => d.id === +dialogId);
+  const dialog = dialogData.find((d) => d.id === +dialogId);
   
   if (dialog) {
     const messages = dialog.messages.map(message => handleMessage(message));
@@ -30,7 +30,7 @@ export const postNewMessage = (userId, body) => {
   updateOnlineStatus(userId);
 
   const { message, dialogId } = body;
-  const currentDialog = dialogs.find((dialog) => dialog.id === +dialogId);
+  const currentDialog = dialogData.find((dialog) => dialog.id === +dialogId);
 
   if (currentDialog && currentDialog.membersId.includes(userId)) {
     const messages = currentDialog.messages;

@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 
 import classes from './Header.module.scss';
-import { CustomImg } from 'components/UI';
+import { AppImg } from 'components/UI';
 import { HeaderMenu } from './HeaderMenu/HeaderMenu';
 
 export const Header = () => {
@@ -10,7 +10,7 @@ export const Header = () => {
       <div className="pageContainer">
         <div className={classes.header__inner}>
           <NavLink to="/">
-            <CustomImg id={'header-logo'} />
+            <AppImg id={'header-logo'} />
           </NavLink>
 
           <h1 className={classes.header__title}>Keep in touch</h1>

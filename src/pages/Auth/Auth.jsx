@@ -17,7 +17,7 @@ export const Auth = () => {
     if (user.hasOwnProperty("id")) {
       navigate("/home")
     }
-  }, [user]) 
+  }, [user]);
 
   return (
     <div className={classes.auth}>

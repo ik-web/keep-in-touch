@@ -1,60 +1,65 @@
-import React from 'react';
-import classNames from 'classnames';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { useUserSelector } from 'store/selectors';
+import { fetchUsers, setCurrentPage } from 'store/reducers';
 
 import classes from './Network.module.scss';
-import { CustomTitle, Loader } from 'components/UI';
-import { Layout } from 'components';
-import { User } from './User/User';
-
-import PaginationButtons from 'shared/PaginationButtons/PaginationButtons';
-// import Pagination from "../../components/Pagination/Pagination";
+import { Loader } from 'components/UI';
+import { Layout, PageBlure, Pagination } from 'components';
+import { UserList } from './UserList/UserList';
 
 export const Network = () => {
-  const users = [];
-  const pageIsLoaded = false;
-  const usersPageIsLoading = false;
-  const currentPage = 1;
-  const fetchUsers = null;
-  const pages = 1;
+  const dispatch = useDispatch();
+  const {
+    usersLoading,
+    currentPage,
+    totalPages
+  } = useUserSelector();
+
+  const handlePaginationClick = (page) => {
+    dispatch(setCurrentPage(page))
+  }
+
+  useEffect(() => {
+    dispatch(fetchUsers(currentPage));
+  }, [currentPage]);
+
+  if (!totalPages) {
+    return (
+      <Layout>
+        <Loader />
+      </Layout>
+    )
+  }
 
   return (
     <Layout>
       <div className={classes.network}>
-        {pageIsLoaded ? (
-          <section className={classes.network__inner}>
-            {/* <Pagination /> */}
-            <PaginationButtons
-              isDisabled={usersPageIsLoading}
-              styles={classes.network__pages}
-              pages={pages}
+        {totalPages > 1 &&  
+          <div className={classes.network__pagination}>
+            <Pagination
               currentPage={currentPage}
-              onEvent={fetchUsers}
+              setCurrentPage={handlePaginationClick}
+              totalPages={totalPages}
+              pageLoading={usersLoading}
+              disabled={usersLoading}
             />
+          </div>
+        }
 
-            <div className={classes.network__usersContainer}>
-              <ul
-                className={classNames(classes.network__users, {
-                  [classes.network__users_loading]: usersPageIsLoading,
-                })}
-              >
-                {users.map((user) => (
-                  <User user={user} key={user.id} />
-                ))}
-              </ul>
+        <section className={classes.network__content}>
+          {usersLoading &&
+            <>
+              <PageBlure />
+              <Loader />
+            </>
+          }
 
-              {usersPageIsLoading && (
-                <div className={classes.network__usersBlure}>
-                  <Loader />
-                </div>
-              )}
-            </div>
-          </section>
-        ) : (
-          // <Loader />
-          <CustomTitle>
-            The page is currently being refactored
-          </CustomTitle>
-        )}
+          <div className={classes.network__userList}>
+            <UserList />
+          </div>
+        </section>
       </div>
     </Layout>
   );

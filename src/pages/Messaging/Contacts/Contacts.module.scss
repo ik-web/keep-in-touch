@@ -2,6 +2,9 @@
 @import 'styles/utils/mixins';
 
 .contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 
   @include sm {
     display: grid;
@@ -14,7 +17,7 @@
   }
     
   @include xs {
-    display: block;
+    display: flex;
     max-width: 300px;
     width: 100%;
     margin: 0 auto;

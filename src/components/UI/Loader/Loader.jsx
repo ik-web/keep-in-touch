@@ -1,10 +1,10 @@
 import classes from'./Loader.module.scss';
-import { CustomImg } from 'components/UI';
+import { AppImg } from 'components/UI';
 
 export const Loader = (props) => {
   return (
     <div className={`${classes.loader} ${props.className}`}>
-      <CustomImg id={'spinner'} />
+      <AppImg id={'spinner'} />
     </div>
   );
 };

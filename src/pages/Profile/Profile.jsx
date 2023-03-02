@@ -6,8 +6,8 @@ import { useAuthSelector, useProfileSelector } from 'store/selectors';
 import { fetchOnlineStatus, fetchProfile, fetchProfilePosts, setIsUserProfile } from 'store/reducers';
 
 import classes from './Profile.module.scss';
-import { Layout } from 'components';
 import { Loader } from 'components/UI';
+import { Layout } from 'components';
 import { ProfileImages } from './ProfileImages/ProfileImages';
 import { ProfileInfo } from './ProfileInfo/ProfileInfo';
 import { ProfilePostCreating } from './ProfilePostCreating/ProfilePostCreating';

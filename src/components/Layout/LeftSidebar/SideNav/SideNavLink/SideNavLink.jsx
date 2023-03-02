@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { NavLink } from "react-router-dom";
 
 import classes from "./SideNavLink.module.scss";
-import { CustomIcon } from "components/UI";
+import { AppIcon } from "components/UI";
 
 export const SideNavLink = ({ link }) => {
   return (
@@ -14,7 +14,7 @@ export const SideNavLink = ({ link }) => {
       }
     >
       <span className={classes.link__icon}>
-        <CustomIcon id={link.id} />
+        <AppIcon id={link.id} />
       </span>
 
       <span>

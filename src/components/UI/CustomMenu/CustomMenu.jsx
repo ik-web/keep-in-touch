@@ -34,9 +34,8 @@ export const CustomMenu = ({
       <CustomButton
         className={`${classes.menu__button} ${menuButtonStyles}`}
         onClick={onClick}
-      >
-        {menuButtonName}
-      </CustomButton>
+        name={menuButtonName}
+      />
 
       <div
         id="overlay"
@@ -99,14 +98,17 @@ const MenuListItem = ({
     <CustomButton
       onClick={item.handleClick}
       className={`${classes.menu__itemButton} ${itemButtonStyles}`}
-    >
-      <span className={`${classes.menu__itemIcon} ${itemIconStyles}`}>
-        {item.icon}
-      </span>
+      name={
+        <>
+          <span className={`${classes.menu__itemIcon} ${itemIconStyles}`}>
+            {item.icon}
+          </span>
 
-      <span className={`${classes.menu__itemName} ${itemNameStyles}`}>
-        {item.name}
-      </span>
-    </CustomButton>
+          <span className={`${classes.menu__itemName} ${itemNameStyles}`}>
+            {item.name}
+          </span>
+        </>
+      }
+    />
   );
 };

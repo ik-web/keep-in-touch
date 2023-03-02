@@ -1,27 +1,33 @@
-@import "styles/utils/vars";
-@import "styles/utils/mixins";
+@import 'styles/utils/vars';
+@import 'styles/utils/mixins';
 
 .profile {
   position: relative;
+
   display: flex;
   flex-direction: column;
+
+  height: 100%;
   background: $color-secondary;
 
   &__info {
-    padding: 16px 0 60px;
+    padding: 16px 0 52px;
     border-bottom: $devider;
   }
 
   &__postCreating {
     display: flex;
     justify-content: center;
+    background: $color-secondary;
   }
 
   &__postCreating {
-    padding: 40px 0 60px;
+    padding-top: 40px;
   }
 
   &__posts {
     flex-grow: 1;
+    padding-top: 40px;
+    background: $color-secondary;
   }
 }

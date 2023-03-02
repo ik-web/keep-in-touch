@@ -1,16 +1,17 @@
-import users from "../../data/users";
+import userData from "../../data/userData";
 import { handleDataPage } from "./handleDataPage";
 import { checkOnlineStatus, updateOnlineStatus } from "./handleOnlineStatus";
 
-export const getUser = (id) => users.find((user) => user.id === id);
+export const getUser = (id) => userData.find((user) => user.id === id);
 
 export const getUsers = (userId, page) => {
   updateOnlineStatus(userId);
 
-  const length = 10;
+  const length = 12;
 
-  const handledUsers = users
+  const handledUsers = userData
   .filter(user => user.id !== userId)
+  .reverse()
   .map(user => ({
     id: user.id,
     name: user.name,

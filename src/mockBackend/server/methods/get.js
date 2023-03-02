@@ -1,6 +1,6 @@
 import { getContacs } from "../handlers/handleContacs";
 import { getDialog } from "../handlers/handleDialog";
-import { getRequestFollowPage } from "../handlers/handleFollow";
+import { getFollowItemsPage } from "../handlers/handleFollow";
 import { getOnlineStatus } from "../handlers/handleOnlineStatus";
 import { getPosts, getProfilePosts } from "../handlers/handlePosts";
 import { getProfile } from "../handlers/handleProfile";
@@ -39,7 +39,7 @@ const methodGet = (request, userKey) => {
           break;
 
         case "follow":
-          resolve(getRequestFollowPage(userKey, ...queryParams));
+          resolve(getFollowItemsPage(userKey, ...queryParams));
           break;
 
         case "online":

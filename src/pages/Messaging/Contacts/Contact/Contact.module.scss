@@ -9,7 +9,6 @@
   gap: 8px;
 
   height: 60px;
-  margin: 1px 1px 10px 1px;
   padding: 0 10px;
 
   background-color: $color-normal;
@@ -21,17 +20,8 @@
   transition: all $transition-behavior;
 
   @include sm {
-    margin: 0;
     text-transform: uppercase;
     text-align: center;
-  }
-
-  @include xs {
-    margin-bottom: 8px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
   }
 
   &:focus,

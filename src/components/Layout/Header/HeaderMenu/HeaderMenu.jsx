@@ -5,7 +5,7 @@ import { useAuthSelector } from "store/selectors";
 import { logout } from "store/reducers";
 
 import classes from "./HeaderMenu.module.scss";
-import { CustomIcon, CustomMenu, SmallAvatar } from "components/UI";
+import { AppIcon, CustomMenu, SmallAvatar } from "components/UI";
 import { useDispatch } from "react-redux";
 
 export const HeaderMenu = () => {
@@ -15,7 +15,7 @@ export const HeaderMenu = () => {
   const [open, setOpen] = useState(false);
 
   const handleOnProfileClick = () => {
-    navigate(`/profile/${user.id}`);
+    navigate('/profile');
     setOpen(false);
   };
 
@@ -28,12 +28,12 @@ export const HeaderMenu = () => {
     {
       id: 1,
       name: "Profile",
-      icon: <CustomIcon id="profile-icon" />,
+      icon: <AppIcon id="profile-icon" />,
       handleClick: handleOnProfileClick,
     },
     {
       id: 2,
-      icon: <CustomIcon id="logout-icon" />,
+      icon: <AppIcon id="logout-icon" />,
       name: "Logout",
       handleClick: handleOnLogoutClick,
     },

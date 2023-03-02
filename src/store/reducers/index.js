@@ -6,3 +6,4 @@ export * from './postReducer';
 export * from './profileReducer';
 export * from './profilePostReducer';
 export * from './onlineStatusReducer';
+export * from './userReducer';

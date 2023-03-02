@@ -79,9 +79,8 @@ export const AuthForm = () => {
                 type="submit"
                 disabled={submitting}
                 className={classes.AuthForm__button}
-              >
-                LogIn
-              </CustomButton>
+                name='Login'
+              />
             </div>
           </div>
         </form>

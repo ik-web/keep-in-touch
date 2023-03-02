@@ -35,9 +35,8 @@ export const NewPostForm = () => {
             type="submit"
             className={classes.newPostForm__button}
             disabled={newPostSending}
-          >
-            Add post
-          </CustomButton>
+            name='Add post'
+          />
         </form>
       )}
     />

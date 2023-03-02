@@ -80,10 +80,10 @@
       &::before {
         content: "";
         position: absolute;
-        top: -10px;
+        top: -7px;
         left: calc(0px - $page_indent_mobile);
         right: calc(0px - $page_indent_mobile);
-        bottom: -10px;
+        bottom: -6px;
         background: $color-secondary;
       }
     }

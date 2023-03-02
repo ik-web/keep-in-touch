@@ -1,4 +1,4 @@
-const posts = [
+const postData = [
   {
     id: 1,
     userId: 1,
@@ -601,4 +601,4 @@ const posts = [
   },
 ];
 
-export default posts;
+export default postData;

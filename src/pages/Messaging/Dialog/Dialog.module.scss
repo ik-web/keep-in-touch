@@ -2,11 +2,7 @@
 @import 'styles/utils/mixins';
 
 .dialog {
-  margin-left: $page_indent;
-
-  @include sm {
-    margin-left: 0;;
-  }
+  height: 100%;
 
   &__inner {
     display: grid;

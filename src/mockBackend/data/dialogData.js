@@ -1,4 +1,4 @@
-const dialogs = [
+const dialogData = [
   { 
     id: 1,
     membersId: [1, 2],
@@ -321,4 +321,4 @@ const dialogs = [
   }
 ]
 
-export default dialogs;
+export default dialogData;

@@ -2,15 +2,15 @@ import { server } from "mockBackend/server";
 import { getUserKey } from "./utils";
 
 export const followAPI = {
-  fetchFollow() {
+  fetchFollowItems() {
     return server.get('follow', getUserKey());
   },
 
-  follow(followData) {
-    return server.post('follow', followData, getUserKey());
+  follow(followItemId) {
+    return server.post('follow', { followItemId }, getUserKey());
   },
   
-  unfollow(id) {
-    return server.delete(`unfollow/${id}`, getUserKey());
+  unfollow(userId) {
+    return server.delete(`unfollow/${ userId }`, getUserKey());
   }
 };

@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 import classes from "./Post.module.scss";
-import { CustomIcon, CustomTitle } from "components/UI";
+import { AppIcon, CustomTitle } from "components/UI";
 import { LinkProfileAvatar } from "components";
 
 export const Post = ({ post }) => {
@@ -17,7 +17,7 @@ export const Post = ({ post }) => {
 
         <button className={classes.post__likeBtn}>
           <span className={classes.post__likeIcon}>
-            <CustomIcon id="like-icon" />
+            <AppIcon id="like-icon" />
           </span>
 
           <span className={classes.post__likesCounter}>{post.likes}</span>

@@ -25,9 +25,9 @@
       grid-template-columns: 1fr;
       grid-template-rows: auto 1fr auto;
       grid-template-areas:
-      'header'
-      'main'
-      'leftSidebar ';
+        'header'
+        'main'
+        'leftSidebar ';
     }
 
     @include sm {
@@ -49,14 +49,32 @@
   }
 
   &__main {
+    position: relative;
     grid-area: main;
-    display: grid;
+
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
 
     border-radius: $border-radius-block;
     overflow-y: scroll;
 
     @include sm {
       grid-template-columns: 1fr;
+    }
+    
+    @include xs {
+
+      &:after {
+        content: "";
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $color-secondary;
+      }
     }
   }
 

@@ -1,12 +1,7 @@
 import classNames from "classnames";
-
-import { useOnlineStatusSelector } from "store/selectors";
-
 import classes from "./OnlineStatus.module.scss";
 
-export const OnlineStatus = () => {
-  const { onlineStatus } = useOnlineStatusSelector();
-
+export const OnlineStatus = ({ onlineStatus }) => {
   return (
     <div className={classes.onlineStatus}>
       <span

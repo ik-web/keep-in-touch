@@ -1,35 +1,80 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
-import { fetchFollow } from "./followAC";
+import { fetchFollowItems, follow, unfollow } from './followAC';
 
 const initialState = {
-  follow: [],
-  totalCount: 0,
-  loading: false,
-  error: "",
+  followItems: [],
+  totalFollowItemsCount: 0,
+  followItemsLoading: false,
+  followItemsError: '',
+
+  followLoading: [],
 };
 
 const followSlice = createSlice({
-  name: "follow",
+  name: 'follow',
   initialState,
-  reducers: {},
+  reducers: {
+    clearFollowItems(state) {
+      state.followItems = [];
+    },
+
+    addFollowLoadingItem(state, action) {
+      state.followLoading.push(action.payload);
+    },
+  },
   extraReducers: (builder) => {
-    builder.addCase(fetchFollow.pending, (state) => {
-      state.loading = true;
+    builder.addCase(fetchFollowItems.pending, (state) => {
+      state.followItemsLoading = true;
     });
 
-    builder.addCase(fetchFollow.fulfilled, (state, action) => {
-      state.loading = false;
-      state.error = "";
-      state.follow = action.payload.items;
-      state.totalCount = action.payload.totalCount;
+    builder.addCase(fetchFollowItems.fulfilled, (state, action) => {
+      state.followItemsLoading = false;
+      state.followItemsError = '';
+      state.followItems = action.payload.items;
+      state.totalFollowItemsCount = action.payload.totalCount;
     });
 
-    builder.addCase(fetchFollow.rejected, (state, action) => {
-      state.loading = false;
-      state.error = action.payload;
+    builder.addCase(fetchFollowItems.rejected, (state, action) => {
+      state.followItemsLoading = false;
+      state.followItemsError = action.payload;
+    });
+
+    builder.addCase(follow.fulfilled, (state, action) => {
+      state.followLoading = handleFolowLoading(state.followLoading, action);
+      state.totalFollowItemsCount += 1;
+      state.followItems.unshift(action.payload);
+    });
+
+    builder.addCase(follow.rejected, (state, action) => {
+      state.followLoading = handleFolowLoading(state.followLoading, action);
+    });
+
+    builder.addCase(unfollow.fulfilled, (state, action) => {
+      state.followLoading = handleFolowLoading(state.followLoading, action);
+      state.totalFollowItemsCount -= 1;
+      state.followItems = state.followItems.filter((item) => item.id !== +action.payload);
+    });
+
+    builder.addCase(unfollow.rejected, (state, action) => {
+      state.followLoading = handleFolowLoading(state.followLoading, action);
     });
   },
 });
 
+export const {
+  addFollowLoadingItem,
+  clearFollowItems
+} = followSlice.actions;
+
 export const followReducer = followSlice.reducer;
+
+export const handleFolowLoading = (state, action) => {
+  let userId = action.payload;
+
+  if (typeof userId !== 'number') {
+    userId = action.payload.id;
+  }
+
+  return state.filter((item) => item !== userId);
+};

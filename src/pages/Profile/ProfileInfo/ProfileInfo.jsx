@@ -1,4 +1,4 @@
-import { useProfileSelector } from "store/selectors";
+import { useOnlineStatusSelector, useProfileSelector } from "store/selectors";
 
 import classes from "./ProfileInfo.module.scss";
 import { CustomTitle } from "components/UI";
@@ -7,6 +7,7 @@ import { ProfileStatus } from "./ProfileStatus/ProfileStatus";
 
 export const ProfileInfo = () => {
   const { profile } = useProfileSelector();
+  const { onlineStatus } = useOnlineStatusSelector();
 
   return (
     <div className={classes.profile}>
@@ -16,7 +17,7 @@ export const ProfileInfo = () => {
         </CustomTitle>
 
         <ProfileStatus />
-        <OnlineStatus />
+        <OnlineStatus onlineStatus={onlineStatus} />
 
         <div className={classes.profile__city}>
           <h4>Lives in:</h4>

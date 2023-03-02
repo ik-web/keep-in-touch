@@ -2,72 +2,38 @@
 @import 'styles/utils/mixins';
 
 .network {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-rows: auto 1fr;
   
+  gap: 16px;
+  
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-
-  &__inner {
-    display: flex;
-    flex-direction: column;
   
-    height: 100%;
-    overflow: hidden;
+  @include xs {
+    gap: 12px;
   }
-  
-  &__pages {
-    margin-bottom: 10px;
 
-    @include xs {
-      margin: 10px 0 15px;
-    }
-  }
-  
-  &__usersContainer {
+  &__content {
     position: relative;
-    
-    display: flex;
-    flex-direction: column;
-  
-    height: 100%;
-  
-    overflow: hidden;
+    border-radius: $border-radius-block $border-radius-block 0 0;
+    overflow-Y: scroll;
   }
 
-  &__users {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+  &__pagination {
+    padding: 12px;
     
-    overflow-y: scroll;
-
-    @include md {
-      padding-bottom: 15px;
-    }
+    background: $color-very-light;
+    border: 1px solid $color-normal;
+    border-radius: $border-radius-block;
 
     @include xs {
-      gap: 10px;
-      padding-bottom: 10px;
+      padding: 8px;
     }
   }
-  
-  &__users_loading {
-    overflow-y: hidden;
-  }
-  
-  &__usersBlure {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 10;
-  
-    display: grid;
-  
-    background: rgba(255, 255, 255, 0.75);
+
+  &__userList {
+    border-radius: $border-radius-block;
   }
 }

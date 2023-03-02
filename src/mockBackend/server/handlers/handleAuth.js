@@ -1,7 +1,7 @@
-import users from "mockBackend/data/users";
+import userData from "mockBackend/data/userData";
 
 const getUserByLogin = (login) => {
-  return users.find((user) => user.login === login);
+  return userData.find((user) => user.login === login);
 };
 
 export const handleAuth = (body) => {

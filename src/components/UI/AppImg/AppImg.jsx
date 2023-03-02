@@ -1,9 +1,9 @@
-import classes from './CustomImg.module.scss'
+import classes from './AppImg.module.scss'
 import headerLogo from 'assets/img/logo.png';
 import spinner from 'assets/img/spinner.svg';
 import community from 'assets/img/community.png';
 
-export const CustomImg = ({ id, ...props }) => {
+export const AppImg = ({ id, ...props }) => {
   switch (id) {
     case 'header-logo':
       return (

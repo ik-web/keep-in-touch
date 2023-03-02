@@ -3,4 +3,8 @@
 
 .rightSidebar {
   @include sidebar;
+
+  @include lg {
+    padding: 4px;
+  }
 }

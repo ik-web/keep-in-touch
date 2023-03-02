@@ -1,14 +1,14 @@
 @import 'styles/utils/vars';
 @import 'styles/utils/mixins';
 
-.user {
+.userCard {
   display: grid;
   grid-template-rows: repeat(6, auto);
   justify-items: center;
   gap: 8px;
 
-  padding: 15px;
-  width: 165px;
+  width: 100%;
+  padding: 20px;
 
   background-color: $color-very-light;
   border: 1px solid $color-normal;
@@ -16,12 +16,8 @@
 
   transition: box-shadow $transition-behavior;
 
-  @include md {
-    padding: 10px;
-  }
-
   @include xs {
-    max-width: 145px;
+    padding: 16px;
   }
 
   &:hover {
@@ -48,6 +44,13 @@
   }
   
   &__button {
-    @include button;
+
+    &_unfollow {
+      background: $color-extra-normal;
+    }
+    
+    &_unfollow:hover {
+      background: $color-extra-dark;
+    }
   }
 }

@@ -1,14 +1,14 @@
-import users from '../../data/users';
-import dialogs from '../../data/dialogs';
+import userData from '../../data/userData';
+import dialogData from '../../data/dialogData';
 import { handleDataPage } from './handleDataPage';
 import { updateOnlineStatus } from './handleOnlineStatus';
 
 export const getUserDialogs = (userId) => {
-  return dialogs.filter((dialog) => dialog.membersId.includes(userId));
+  return dialogData.filter((dialog) => dialog.membersId.includes(userId));
 };
 
 const getContact = (userId, dialog) => {
-  return users.find((user) => user.id === dialog.membersId.find((id) => id !== userId));
+  return userData.find((user) => user.id === dialog.membersId.find((id) => id !== userId));
 };
 
 export const getContacs = (userId, length = 20) => {

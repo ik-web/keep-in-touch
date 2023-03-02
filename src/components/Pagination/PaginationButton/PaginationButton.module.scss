@@ -1,0 +1,29 @@
+@import 'styles/utils/vars';
+@import 'styles/utils/mixins';
+
+.button {
+  width: 32px;
+  height: 32px;
+  font-size: $font-size-small;
+  border: 2px solid transparent;
+
+  &:focus,
+  &:hover {
+    color: $color-secondary;
+    background: $color-normal;
+  }
+
+  &:disabled {
+    color: $color-main;
+  }
+
+  &_isActive {
+    color: $color-secondary;
+    background: $color-dark;
+
+    &:focus,
+    &:hover {
+      background: $color-dark;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import classes from './CustomIcon.module.scss';
+import classes from './AppIcon.module.scss';
 import logout from 'assets/ico/logout.png';
 import like from 'assets/ico/like.ico';
 import home from 'assets/ico/home.png';
@@ -7,7 +7,7 @@ import network from 'assets/ico/network.ico';
 import community from 'assets/ico/community.png';
 import profile from 'assets/ico/profile.ico';
 
-export const CustomIcon = ({ id }) => {
+export const AppIcon = ({ id }) => {
   switch (id) {
     case 'logout-icon':
       return (
